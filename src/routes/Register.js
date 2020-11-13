@@ -44,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
 export default function Register() {
   const classes = useStyles();
 
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Container className={classes.mainbox} component="main" maxWidth="xs">
       <CssBaseline />
@@ -54,7 +58,7 @@ export default function Register() {
         <Typography component="h1" variant="h5">
           Create Account
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={onSubmitForm}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField

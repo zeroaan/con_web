@@ -43,6 +43,10 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Container className={classes.mainbox} component="main" maxWidth="xs">
       <CssBaseline />
@@ -53,7 +57,7 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={onSubmitForm}>
           <TextField
             variant="outlined"
             margin="normal"
