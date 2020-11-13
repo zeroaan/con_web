@@ -8,7 +8,9 @@ const Navbar = () => {
     <>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="nav">
-          <img className="logo" src={logo} alt="LOGO" title="LOGO" />
+          <Link to="/">
+            <img className="logo" src={logo} alt="LOGO" title="LOGO" />
+          </Link>
           <ul className="navbar">
             <li>Concept</li>
             <li>Progress</li>
