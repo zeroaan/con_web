@@ -6,15 +6,15 @@
 
 <br />
 
-#### Directory 구조
+### Directory 구조
 
-##### src/components
+#### src/components
 
 - **Navbar** : 각 페이지에 사용될 navbar component
 
 <br />
 
-##### src/routes
+#### src/routes
 
 - **Home** : 접속시 보이는 첫 페이지
 - **Login** : navbar 우측에 있는 login 클릭 시 이동 될 로그인 페이지
