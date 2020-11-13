@@ -7,17 +7,21 @@ const Navbar = () => {
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <img className="logo" src={logo} alt="LOGO" />
-        <ul className="navbar">
-          <li>Concept</li>
-          <li>Progress</li>
-          <li>Stack</li>
-          <li>Operation</li>
-          <li>Member</li>
+        <div className="nav">
+          <img className="logo" src={logo} alt="LOGO" />
+          <ul className="navbar">
+            <li>Concept</li>
+            <li>Progress</li>
+            <li>Stack</li>
+            <li>Operation</li>
+            <li>Member</li>
+          </ul>
           <Link className="loginBt" to="/login">
-            <li>login</li>
+            <ul className="navbar">
+              <li>login</li>
+            </ul>
           </Link>
-        </ul>
+        </div>
       </div>
     </>
   );
