@@ -8,6 +8,7 @@ const Home = () => {
       <div className="screen">
         <Navbar color="white" />
       </div>
+      <div>Home</div>
     </>
   );
 };
