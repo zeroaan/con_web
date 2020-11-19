@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./Navbar.css";
 import logo from "img/logo.png";
+import loginSuccess from "img/loginSuccess.png";
 
 const Navbar = ({ color }) => {
+  const { loginState } = useSelector((state) => state.user);
+
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -28,11 +32,21 @@ const Navbar = ({ color }) => {
               <li>Member</li>
             </Link>
           </ul>
-          <Link className="loginBt" to="/login">
-            <ul className="navbar" style={{ color: `${color}` }}>
-              <li>login</li>
-            </ul>
-          </Link>
+          {loginState ? (
+            <div className="loginSuccess">
+              <img
+                className="loginSuccessImg"
+                src={loginSuccess}
+                alt="loginSuccess"
+              />
+            </div>
+          ) : (
+            <Link className="loginBt" to="/login">
+              <ul className="navbar" style={{ color: `${color}` }}>
+                <li>login</li>
+              </ul>
+            </Link>
+          )}
         </div>
       </div>
     </>

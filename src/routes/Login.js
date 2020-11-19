@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { loginStateChange } from "store/actions/user";
 import logo from "img/logo.png";
 
 import Button from "@material-ui/core/Button";
@@ -38,8 +41,13 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
+  const dispatch = useDispatch();
+
   const onSubmitForm = (e) => {
     e.preventDefault();
+  };
+  const onClickLoginBt = () => {
+    dispatch(loginStateChange());
   };
 
   return (
@@ -79,15 +87,17 @@ export default function Login() {
             id="password"
             autoComplete="current-password"
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Login
-          </Button>
+          <Link to="/" onClick={onClickLoginBt}>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Login
+            </Button>
+          </Link>
           <Grid container>
             <Grid item style={{ margin: "auto" }}>
               <Link
