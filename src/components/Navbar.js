@@ -8,7 +8,7 @@ import "./Navbar.css";
 import logo from "img/logo.png";
 import loginSuccess from "img/loginSuccess.png";
 
-const Navbar = ({ color }) => {
+const Navbar = ({ color, borderColor }) => {
   const dispatch = useDispatch();
 
   const { loginState } = useSelector((state) => state.user);
@@ -20,7 +20,13 @@ const Navbar = ({ color }) => {
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div className="nav" style={{ borderBottom: `1px solid ${color}` }}>
+        <div
+          className="nav"
+          style={{
+            borderBottom: `1px solid ${borderColor}`,
+            backgroundColor: "rgb(255,255,255,0.7)",
+          }}
+        >
           <Link to="/">
             <img className="logo" src={logo} alt="LOGO" />
           </Link>

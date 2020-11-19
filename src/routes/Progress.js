@@ -5,7 +5,7 @@ import "./style/Progress.css";
 const Progress = () => {
   return (
     <>
-      <Navbar color="black" />
+      <Navbar color="black" borderColor="black" />
       <div>progress</div>
     </>
   );

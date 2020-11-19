@@ -5,7 +5,7 @@ import "./style/Stack.css";
 const Stack = () => {
   return (
     <>
-      <Navbar color="black" />
+      <Navbar color="black" borderColor="black" />
       <div>stack</div>
     </>
   );

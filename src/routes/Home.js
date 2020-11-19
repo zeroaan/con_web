@@ -6,9 +6,8 @@ const Home = () => {
   return (
     <>
       <div className="screen">
-        <Navbar color="white" />
+        <Navbar color="black" borderColor="none" />
       </div>
-      <div>Home</div>
     </>
   );
 };

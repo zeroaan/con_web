@@ -5,7 +5,7 @@ import "./style/Operation.css";
 const Operation = () => {
   return (
     <>
-      <Navbar color="black" />
+      <Navbar color="black" borderColor="black" />
       <div>operation</div>
     </>
   );

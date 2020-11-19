@@ -5,7 +5,7 @@ import "./style/Members.css";
 const Members = () => {
   return (
     <>
-      <Navbar color="black" />
+      <Navbar color="black" borderColor="black" />
       <div>member</div>
     </>
   );
