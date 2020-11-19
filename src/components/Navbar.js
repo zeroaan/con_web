@@ -1,12 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { loginStateChange } from "store/actions/user";
+
 import "./Navbar.css";
 import logo from "img/logo.png";
 import loginSuccess from "img/loginSuccess.png";
 
 const Navbar = ({ color }) => {
+  const dispatch = useDispatch();
+
   const { loginState } = useSelector((state) => state.user);
+
+  const onClickLogoutBt = () => {
+    dispatch(loginStateChange());
+  };
 
   return (
     <>
@@ -33,18 +42,26 @@ const Navbar = ({ color }) => {
             </Link>
           </ul>
           {loginState ? (
-            <div className="loginSuccess">
-              <img
-                className="loginSuccessImg"
-                src={loginSuccess}
-                alt="loginSuccess"
-              />
-            </div>
+            <>
+              <div className="loginSuccess">
+                <img
+                  className="loginSuccessImg"
+                  src={loginSuccess}
+                  alt="loginSuccess"
+                />
+              </div>
+              <Link
+                className="logoutBt"
+                to="/"
+                style={{ color: `${color}` }}
+                onClick={onClickLogoutBt}
+              >
+                logout
+              </Link>
+            </>
           ) : (
-            <Link className="loginBt" to="/login">
-              <ul className="navbar" style={{ color: `${color}` }}>
-                <li>login</li>
-              </ul>
+            <Link className="loginBt" to="/login" style={{ color: `${color}` }}>
+              login
             </Link>
           )}
         </div>
