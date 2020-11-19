@@ -52,7 +52,6 @@ export default function Register() {
             style={{ width: "60px", height: "60px", marginBottom: "15px" }}
             src={logo}
             alt="LOGO"
-            title="LOGO"
           />
         </Link>
         <Typography component="h1" variant="h5">

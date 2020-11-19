@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <div className="screen">
-        <Navbar />
+        <Navbar color="white" />
       </div>
     </>
   );
