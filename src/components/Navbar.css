@@ -3,81 +3,49 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100vw;
-  margin: auto;
   font-family: "Goldman", cursive;
-  padding-left: 2vw;
+  padding: 0 9vw;
 }
 .logo {
   width: 70px;
   height: 70px;
-  position: relative;
-  top: 15px;
-  left: 100px;
-  cursor: pointer;
 }
 .navbar {
   flex: 2;
   display: flex;
-  list-style: none;
-  position: relative;
-  left: 100px;
+  margin-left: 3vw;
 }
-.navbar li {
-  cursor: pointer;
+.navbar a {
   padding: 0 2vw;
   height: 100px;
   font-size: 1.3vw;
   line-height: 100px;
   user-select: none;
-}
-.navbar li:hover {
-  border-bottom: 5px solid rgb(56, 94, 217);
-}
-.navbar a {
   text-decoration: none;
 }
-.loginBt {
-  position: relative;
-  right: 100px;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  width: 8vw;
-  height: 100px;
-  font-size: 1.3vw;
-  line-height: 100px;
-  user-select: none;
-}
-.loginBt:hover {
+.navbar a:hover {
   border-bottom: 5px solid rgb(56, 94, 217);
 }
-.loginSuccess {
-  width: 60px;
-  height: 100px;
-  position: relative;
-  right: 100px;
-}
-.loginSuccessImg {
-  position: relative;
-  top: 25px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  border: 2px solid silver;
-}
+.loginBt,
 .logoutBt {
-  position: relative;
-  right: 100px;
-  text-decoration: none;
-  cursor: pointer;
   text-align: center;
   width: 8vw;
   height: 100px;
   font-size: 1.3vw;
   line-height: 100px;
   user-select: none;
+  text-decoration: none;
 }
+.loginBt:hover,
 .logoutBt:hover {
   border-bottom: 5px solid rgb(56, 94, 217);
+}
+.loginSuccessImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  border: 2px solid silver;
+  margin-right: 15px;
 }
