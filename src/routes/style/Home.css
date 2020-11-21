@@ -1,6 +1,5 @@
 .screen {
   max-width: 100vw;
   height: 100vh;
-  background: center/cover no-repeat
-    url("https://h7f7z2r7.stackpathcdn.com/sites/default/files/images/articles/geekrobot.jpg");
+  background: center/cover no-repeat url("../../img/screen.jpg");
 }

@@ -19,3 +19,8 @@
 - **Home** : 접속시 보이는 첫 페이지
 - **Login** : navbar 우측에 있는 login 클릭 시 이동 될 로그인 페이지
 - **Register** : Login 페이지에서 Sign up 클릭 시 이동 될 회원가입 페이지
+- **Concept** : Project Concept
+- **Members** : Project Member
+- **Operation** : Project Operation
+- **Progress**: Project Progress
+- **Stack** : Project Stack
