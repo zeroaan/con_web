@@ -1,13 +1,21 @@
 import React from "react";
+import styled from "styled-components";
+
 import Navbar from "components/Navbar";
-import "./style/Home.css";
+import screen from "img/screen.jpg";
+
+const DivScreen = styled.div`
+  maxwidth: 100vw;
+  height: 100vh;
+  background: center/cover no-repeat url(${screen});
+`;
 
 const Home = () => {
   return (
     <>
-      <div className="screen">
+      <DivScreen>
         <Navbar color="black" borderColor="none" />
-      </div>
+      </DivScreen>
     </>
   );
 };

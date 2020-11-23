@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import Home from "routes/Home";
 import Login from "routes/Login";
 import Register from "routes/Register";
@@ -8,7 +9,6 @@ import Progress from "routes/Progress";
 import Stack from "routes/Stack";
 import Operation from "routes/Operation";
 import Members from "routes/Members";
-import "./App.css";
 
 const App = () => {
   return (

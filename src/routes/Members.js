@@ -1,11 +1,10 @@
 import React from "react";
 import Navbar from "components/Navbar";
-import "./style/Members.css";
 
 const Members = () => {
   return (
     <>
-      <Navbar color="black" borderColor="black" />
+      <Navbar />
       <div>member</div>
     </>
   );
