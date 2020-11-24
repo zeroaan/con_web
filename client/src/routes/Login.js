@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { loginStateChange } from "store/actions/user";
+import { loginUser } from "store/actions/user";
 import logo from "img/logo.png";
 
 import Button from "@material-ui/core/Button";
@@ -41,13 +42,37 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
+  const history = useHistory();
   const dispatch = useDispatch();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onChangeEmail = (e) => {
+    const { value } = e.target;
+    setEmail(value);
+  };
+
+  const onChangePassword = (e) => {
+    const { value } = e.target;
+    setPassword(value);
+  };
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-  };
-  const onClickLoginBt = () => {
-    dispatch(loginStateChange());
+
+    let body = {
+      email: email,
+      password: password,
+    };
+
+    dispatch(loginUser(body)).then((response) => {
+      if (response.payload.loginSuccess) {
+        history.push("/");
+      } else {
+        alert("Error");
+      }
+    });
   };
 
   return (
@@ -66,6 +91,7 @@ export default function Login() {
         </Typography>
         <form className={classes.form} noValidate onSubmit={onSubmitForm}>
           <TextField
+            type="email"
             variant="outlined"
             margin="normal"
             required
@@ -75,29 +101,31 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={email}
+            onChange={onChangeEmail}
           />
           <TextField
+            type="password"
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            name="password"
-            label="Password"
-            type="password"
             id="password"
+            label="Password"
+            name="password"
             autoComplete="current-password"
+            value={password}
+            onChange={onChangePassword}
           />
-          <Link to="/" onClick={onClickLoginBt}>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Login
-            </Button>
-          </Link>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Login
+          </Button>
           <Grid container>
             <Grid item style={{ margin: "auto" }}>
               <Link

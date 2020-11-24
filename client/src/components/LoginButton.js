@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import axios from "axios";
 import styled from "styled-components";
-
-import { loginStateChange } from "store/actions/user";
 
 import loginSuccess from "img/loginSuccess.png";
 
@@ -29,12 +28,25 @@ const ImgloginImg = styled.img`
 `;
 
 const LoginButton = ({ color }) => {
-  const dispatch = useDispatch();
+  const { userData } = useSelector((state) => state.user);
 
-  const { loginState } = useSelector((state) => state.user);
+  const [loginState, setLoginState] = useState(userData.isAuth);
 
-  const onClickLogoutBt = () => {
-    dispatch(loginStateChange());
+  useEffect(() => {
+    setLoginState(userData.isAuth);
+    return () => {
+      setLoginState(false);
+    };
+  }, [userData]);
+
+  const onClickHandler = () => {
+    axios.get(`/api/users/logout`).then((response) => {
+      if (response.data.success) {
+        setLoginState(false);
+      } else {
+        alert("Error");
+      }
+    });
   };
 
   const LoginBt = () => {
@@ -50,7 +62,7 @@ const LoginButton = ({ color }) => {
     return (
       <>
         <ImgloginImg src={loginSuccess} alt="loginSuccess" />
-        <LinkLogInOutBt color={color} to="/" onClick={onClickLogoutBt}>
+        <LinkLogInOutBt color={color} to="/" onClick={onClickHandler}>
           logout
         </LinkLogInOutBt>
       </>
