@@ -52,14 +52,14 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const onChangeText = (e) => {
-    const { value } = e.target;
-    if (e.targat.name === "myName") {
+    const { value, name } = e.target;
+    if (name === "myName") {
       setName(value);
-    } else if (e.targat.name === "email") {
+    } else if (name === "email") {
       setEmail(value);
-    } else if (e.targat.name === "password") {
+    } else if (name === "password") {
       setPassword(value);
-    } else if (e.targat.name === "confirmPassword") {
+    } else if (name === "confirmPassword") {
       setConfirmPassword(value);
     }
   };
@@ -110,7 +110,7 @@ export default function Register() {
                 required
                 fullWidth
                 id="name"
-                label="myName"
+                label="Name"
                 name="myName"
                 autoFocus
                 value={myName}

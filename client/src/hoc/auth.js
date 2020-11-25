@@ -13,7 +13,6 @@ const Auth = (SpecificComponent, option, adminRoute = null) => {
   // true : 로그인 한 유저만 출입이 가능한 페이지
   // false : 로그인 한 유저는 출입이 불가능 한 페이지
   // adminRouth : Admin user 출입기능
-
   function AuthenticationCheck() {
     const history = useHistory();
     const dispatch = useDispatch();
