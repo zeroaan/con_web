@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Navbar from "components/Navbar";
-import screen from "img/screen.jpg";
+import screen from "assets/screen.jpg";
 
 const DivScreen = styled.div`
   maxwidth: 100vw;

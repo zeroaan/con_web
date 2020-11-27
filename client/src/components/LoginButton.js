@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import styled from "styled-components";
 
-import loginSuccess from "img/loginSuccess.png";
+import loginSuccess from "assets/loginSuccess.png";
 
 const LinkLogInOutBt = styled(Link)`
   text-align: center;

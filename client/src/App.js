@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Auth from "hoc/auth";
 
-import Home from "routes/Home";
-import Login from "routes/Login";
-import Register from "routes/Register";
-import Concept from "routes/Concept";
-import Progress from "routes/Progress";
-import Stack from "routes/Stack";
-import Operation from "routes/Operation";
-import Members from "routes/Members";
+import Home from "pages/Home";
+import Login from "pages/Login";
+import Register from "pages/Register";
+import Concept from "pages/Concept";
+import Progress from "pages/Progress";
+import Stack from "pages/Stack";
+import Operation from "pages/Operation";
+import Members from "pages/Members";
 
 const App = () => {
   return (

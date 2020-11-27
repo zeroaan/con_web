@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import LoginButton from "components/LoginButton";
-import logo from "img/logo.png";
+import logo from "assets/logo.png";
 
 const DivNav = styled.div`
   display: flex;
