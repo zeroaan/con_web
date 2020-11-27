@@ -26,7 +26,7 @@ const DivNavMenu = styled.div`
   a {
     padding: 0 2vw;
     height: 100px;
-    font-size: 1.3vw;
+    font-size: 18px;
     line-height: 100px;
     user-select: none;
     text-decoration: none;
@@ -48,7 +48,6 @@ const Navbar = ({ color, borderColor }) => {
           <Link to="/concept">Concept</Link>
           <Link to="/progress">Progress</Link>
           <Link to="/stack">Stack</Link>
-          <Link to="/operation">Operation</Link>
           <Link to="/member">Member</Link>
         </DivNavMenu>
         <LoginButton color={color} />

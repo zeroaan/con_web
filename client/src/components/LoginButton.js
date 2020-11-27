@@ -10,7 +10,7 @@ const LinkLogInOutBt = styled(Link)`
   text-align: center;
   width: 8vw;
   height: 100px;
-  font-size: 1.3vw;
+  font-size: 18px;
   line-height: 100px;
   user-select: none;
   text-decoration: none;
