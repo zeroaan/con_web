@@ -13,7 +13,7 @@ const DivScreen = styled.div`
 const DivOperation = styled.div`
   position: relative;
   top: 330px;
-  left: 1000px;
+  left: 65vw;
   width: 300px;
   height: 150px;
   user-select: none;
