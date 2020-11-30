@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+
+import { logoutUser } from "store/actions/user";
 
 import loginSuccess from "assets/loginSuccess.png";
 
@@ -28,6 +29,7 @@ const ImgloginImg = styled.img`
 `;
 
 const LoginButton = ({ color }) => {
+  const dispatch = useDispatch();
   const { userData } = useSelector((state) => state.user);
 
   const [loginState, setLoginState] = useState(userData.isAuth);
@@ -38,15 +40,8 @@ const LoginButton = ({ color }) => {
       setLoginState(false);
     };
   }, [userData]);
-
-  const onClickHandler = () => {
-    axios.get(`/api/users/logout`).then((response) => {
-      if (response.data.success) {
-        setLoginState(false);
-      } else {
-        alert("Error");
-      }
-    });
+  const onClickLogout = () => {
+    dispatch(logoutUser());
   };
 
   const LoginBt = () => {
@@ -62,7 +57,7 @@ const LoginButton = ({ color }) => {
     return (
       <>
         <ImgloginImg src={loginSuccess} alt="loginSuccess" />
-        <LinkLogInOutBt color={color} to="/" onClick={onClickHandler}>
+        <LinkLogInOutBt color={color} to="/" onClick={onClickLogout}>
           logout
         </LinkLogInOutBt>
       </>

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 
 import Navbar from "components/Navbar";
@@ -24,7 +26,8 @@ const H2Operation = styled.h2`
   font-size: 35px;
   font-family: "Goldman", cursive;
 `;
-const ButtonOperation = styled.button`
+const ButtonOperation = styled(Link)`
+  text-decoration: none;
   padding: 12px 60px 12px 64px;
   color: white;
   background-color: black;
@@ -37,6 +40,18 @@ const ButtonOperation = styled.button`
 `;
 
 const Home = () => {
+  const location = useLocation();
+  const { userData } = useSelector((state) => state.user);
+
+  const [loginState, setLoginState] = useState(userData.isAuth);
+
+  useEffect(() => {
+    setLoginState(userData.isAuth);
+    return () => {
+      setLoginState(false);
+    };
+  }, [userData]);
+
   const [operationState, setOperationState] = useState(false);
 
   const onClickOperation = () => {
@@ -46,13 +61,17 @@ const Home = () => {
     setOperationState(false);
   };
 
+  const PathName = loginState ? location.pathname : "/login";
+
   return (
     <>
       <DivScreen>
         <Navbar color="black" borderColor="none" />
         <DivOperation>
           <H2Operation>Operation</H2Operation>
-          <ButtonOperation onClick={onClickOperation}>바로가기</ButtonOperation>
+          <ButtonOperation to={PathName} onClick={onClickOperation}>
+            바로가기
+          </ButtonOperation>
         </DivOperation>
         {operationState ? <Operation onClickClose={onClickClose} /> : null}
       </DivScreen>
