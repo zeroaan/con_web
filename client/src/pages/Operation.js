@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import CloseIcon from "@material-ui/icons/Close";
 
+import rosMap from "assets/rosmap.png";
+
 const DivBlack = styled.div`
   position: fixed;
   top: 0;
@@ -25,13 +27,32 @@ const CloseIconButton = styled(CloseIcon)`
   right: 10px;
   cursor: pointer;
 `;
+const DivRos = styled.div`
+  position: relative;
+  top: 90px;
+  left: 125px;
+  user-select: none;
+`;
+const DivPoint = styled.div`
+  position: absolute;
+  top: 253px;
+  left: 485px;
+  font-size: 20px;
+  color: red;
+`;
+const ImgRosMap = styled.img`
+  width: 750px;
+`;
 
 const Operation = ({ onClickClose }) => {
   return (
     <DivBlack>
       <DivOperation>
         <CloseIconButton onClick={onClickClose} />
-        operation
+        <DivRos>
+          <DivPoint>●</DivPoint>
+          <ImgRosMap src={rosMap} alt="MAP" />
+        </DivRos>
       </DivOperation>
     </DivBlack>
   );
