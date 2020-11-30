@@ -1,20 +1,39 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import styled from "styled-components";
+import CloseIcon from "@material-ui/icons/Close";
 
-import Navbar from "components/Navbar";
+const DivBlack = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const DivOperation = styled.div`
+  position: relative;
+  width: 1000px;
+  height: 600px;
+  background-color: rgb(235, 236, 240);
+`;
+const CloseIconButton = styled(CloseIcon)`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+`;
 
-const Operation = () => {
-  const { userData } = useSelector((state) => state.user);
-
+const Operation = ({ onClickClose }) => {
   return (
-    <>
-      <Navbar />
-      {userData.isAuth ? (
-        <div>operation</div>
-      ) : (
-        <div>로그인 후 이용해주세요</div>
-      )}
-    </>
+    <DivBlack>
+      <DivOperation>
+        <CloseIconButton onClick={onClickClose} />
+        operation
+      </DivOperation>
+    </DivBlack>
   );
 };
 

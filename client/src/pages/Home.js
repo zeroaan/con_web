@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import Navbar from "components/Navbar";
 import screen from "assets/screen.jpg";
+import Operation from "pages/Operation";
 
 const DivScreen = styled.div`
   maxwidth: 100vw;
@@ -24,9 +24,8 @@ const H2Operation = styled.h2`
   font-size: 35px;
   font-family: "Goldman", cursive;
 `;
-const LinkOperation = styled(Link)`
+const ButtonOperation = styled.button`
   padding: 12px 60px 12px 64px;
-  text-decoration: none;
   color: white;
   background-color: black;
   font-size: 24px;
@@ -34,17 +33,28 @@ const LinkOperation = styled(Link)`
   letter-spacing: 5px;
   border: 3px solid black;
   border-radius: 5px;
+  cursor: pointer;
 `;
 
 const Home = () => {
+  const [operationState, setOperationState] = useState(false);
+
+  const onClickOperation = () => {
+    setOperationState(true);
+  };
+  const onClickClose = () => {
+    setOperationState(false);
+  };
+
   return (
     <>
       <DivScreen>
         <Navbar color="black" borderColor="none" />
         <DivOperation>
           <H2Operation>Operation</H2Operation>
-          <LinkOperation to="/operation">바로가기</LinkOperation>
+          <ButtonOperation onClick={onClickOperation}>바로가기</ButtonOperation>
         </DivOperation>
+        {operationState ? <Operation onClickClose={onClickClose} /> : null}
       </DivScreen>
     </>
   );
