@@ -9,16 +9,8 @@ const Concept = () => {
   return (
     <>
       <Navbar borderColor="none" />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          position: "relative",
-        }}
-      >
-        <ConceptTitle />
-        <ConceptContent />
-      </div>
+      <ConceptTitle />
+      <ConceptContent />
       <Footer />
     </>
   );
