@@ -13,7 +13,7 @@ const DivNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  max-width: 100vw;
   height: 70px;
   font-family: "Nunito", sans-serif;
   padding: 0 9vw;
