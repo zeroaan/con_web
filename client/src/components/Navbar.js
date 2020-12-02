@@ -6,18 +6,23 @@ import LoginButton from "components/LoginButton";
 import logo from "assets/logo.png";
 
 const DivNav = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  font-family: "Goldman", cursive;
+  height: 70px;
+  font-family: "Nunito", sans-serif;
   padding: 0 9vw;
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgb(255, 255, 255, 0.5);
   border-bottom: 1px solid ${(props) => props.borderColor || "black"};
 `;
 const ImgLogo = styled.img`
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
 `;
 const DivNavMenu = styled.div`
   flex: 2;
