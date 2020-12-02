@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -6,7 +6,7 @@ import LoginButton from "components/LoginButton";
 import logo from "assets/logo.png";
 
 const DivNav = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -19,6 +19,7 @@ const DivNav = styled.div`
   padding: 0 9vw;
   background-color: rgb(255, 255, 255, 0.5);
   border-bottom: 1px solid ${(props) => props.borderColor || "black"};
+  z-index: 1;
 `;
 const ImgLogo = styled.img`
   width: 50px;
@@ -43,9 +44,30 @@ const DivNavMenu = styled.div`
 `;
 
 const Navbar = ({ color, borderColor }) => {
+  const navEl = useRef(null);
+  const prevScrollTop = useRef(0);
+  const nowScrollTop = useRef(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      const scrollTop = ("scroll", e.target.scrollingElement.scrollTop);
+      nowScrollTop.current = scrollTop;
+      if (prevScrollTop.current - nowScrollTop.current > 0) {
+        if (navEl.current) {
+          navEl.current.style.position = "fixed";
+        }
+      } else {
+        if (navEl.current) {
+          navEl.current.style.position = "absolute";
+        }
+      }
+      prevScrollTop.current = nowScrollTop.current;
+    });
+  }, []);
+
   return (
     <>
-      <DivNav borderColor={borderColor}>
+      <DivNav ref={navEl} borderColor={borderColor}>
         <Link to="/">
           <ImgLogo src={logo} alt="LOGO" />
         </Link>

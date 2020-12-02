@@ -15,7 +15,6 @@ const Concept = () => {
           display: "flex",
           flexDirection: "column",
           position: "relative",
-          zIndex: "-1",
         }}
       >
         <div
