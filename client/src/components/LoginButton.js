@@ -10,9 +10,9 @@ import loginSuccess from "assets/loginSuccess.png";
 const LinkLogInOutBt = styled(Link)`
   text-align: center;
   width: 8vw;
-  height: 100px;
+  height: 70px;
   font-size: 18px;
-  line-height: 100px;
+  line-height: 70px;
   user-select: none;
   text-decoration: none;
   color: ${(props) => props.color || "black"};
@@ -21,8 +21,8 @@ const LinkLogInOutBt = styled(Link)`
   }
 `;
 const ImgloginImg = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 30px;
   border: 2px solid silver;
   margin-right: 15px;

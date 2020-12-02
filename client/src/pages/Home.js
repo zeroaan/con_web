@@ -14,7 +14,7 @@ const DivScreen = styled.div`
 `;
 const DivOperation = styled.div`
   position: relative;
-  top: 330px;
+  top: 400px;
   left: 65vw;
   width: 300px;
   height: 150px;
@@ -24,7 +24,7 @@ const H2Operation = styled.h2`
   margin-bottom: 20px;
   color: black;
   font-size: 35px;
-  font-family: "Goldman", cursive;
+  font-family: "Nunito", sans-serif;
 `;
 const ButtonOperation = styled(Link)`
   text-decoration: none;
@@ -32,7 +32,7 @@ const ButtonOperation = styled(Link)`
   color: white;
   background-color: black;
   font-size: 24px;
-  font-family: "Do Hyeon", sans-serif;
+  font-family: "Nunito", sans-serif;
   letter-spacing: 5px;
   border: 3px solid black;
   border-radius: 5px;

@@ -30,9 +30,9 @@ const DivNavMenu = styled.div`
   margin-left: 3vw;
   a {
     padding: 0 2vw;
-    height: 100px;
+    height: 70px;
     font-size: 18px;
-    line-height: 100px;
+    line-height: 70px;
     user-select: none;
     text-decoration: none;
     color: ${(props) => props.color || "black"};
