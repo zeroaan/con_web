@@ -1,9 +1,13 @@
-import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 
-import LoginButton from "components/LoginButton";
 import logo from "assets/logo.png";
+import run from "assets/run.png";
+
+import LoginButton from "components/LoginButton";
+import Operation from "pages/Operation";
 
 const DivNav = styled.div`
   position: absolute;
@@ -42,6 +46,10 @@ const DivNavMenu = styled.div`
     border-bottom: 5px solid rgb(56, 94, 217);
   }
 `;
+const ButtonOperation = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
+`;
 
 const Navbar = ({ color }) => {
   const navEl = useRef(null);
@@ -65,6 +73,29 @@ const Navbar = ({ color }) => {
     });
   }, []);
 
+  const location = useLocation();
+  const { userData } = useSelector((state) => state.user);
+
+  const [loginState, setLoginState] = useState(userData.isAuth);
+
+  useEffect(() => {
+    setLoginState(userData.isAuth);
+    return () => {
+      setLoginState(false);
+    };
+  }, [userData]);
+
+  const [operationState, setOperationState] = useState(false);
+
+  const onClickOperation = () => {
+    setOperationState(true);
+  };
+  const onClickClose = () => {
+    setOperationState(false);
+  };
+
+  const PathName = loginState ? location.pathname : "/login";
+
   return (
     <>
       <DivNav ref={navEl}>
@@ -77,6 +108,10 @@ const Navbar = ({ color }) => {
           <Link to="/history">History</Link>
           <Link to="/member">Member</Link>
         </DivNavMenu>
+        <ButtonOperation to={PathName} onClick={onClickOperation}>
+          <img style={{ width: "50px", marginRight: "5px" }} src={run} alt="run" />
+        </ButtonOperation>
+        {operationState ? <Operation onClickClose={onClickClose} /> : null}
         <LoginButton color={color} />
       </DivNav>
     </>

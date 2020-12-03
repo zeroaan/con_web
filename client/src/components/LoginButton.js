@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import { logoutUser } from "store/actions/user";
 
-import loginSuccess from "assets/loginSuccess.png";
+// import loginSuccess from "assets/loginSuccess.png";
 
 const LinkLogInOutBt = styled(Link)`
   text-align: center;
@@ -56,7 +56,7 @@ const LoginButton = ({ color }) => {
   const LogoutBt = () => {
     return (
       <>
-        <ImgloginImg src={loginSuccess} alt="loginSuccess" />
+        {/*<ImgloginImg src={loginSuccess} alt="loginSuccess" />*/}
         <LinkLogInOutBt color={color} to="/" onClick={onClickLogout}>
           logout
         </LinkLogInOutBt>
