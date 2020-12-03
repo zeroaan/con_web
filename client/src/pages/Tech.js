@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
 import ROS from "assets/ros.png";
@@ -21,6 +21,24 @@ const ImgStyled = styled.img`
 `;
 
 const Tech = () => {
+  const techEl = useRef(null);
+
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      const scrollTop = ("scroll", e.target.scrollingElement.scrollTop);
+      console.log(scrollTop);
+      if (scrollTop > 1000) {
+        if (techEl.current) {
+          techEl.current.style.position = "static";
+        }
+      } else {
+        if (techEl.current) {
+          techEl.current.style.position = "sticky";
+        }
+      }
+    });
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -29,7 +47,12 @@ const Tech = () => {
         subTitle="We're looking for great people to join our growing team."
       />
       <div
+        ref={techEl}
         style={{
+          position: "sticky",
+          top: "0px",
+          height: "100vh",
+          backgroundColor: "white",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -41,7 +64,7 @@ const Tech = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            margin: "100px 0 0 0",
+            margin: "50px 0 0 0",
           }}
         >
           <h1
@@ -65,15 +88,28 @@ const Tech = () => {
           <ImgStyled src={REACT} alt="REACT" />
           <ImgStyled src={NODEJS} alt="NODEJS" />
         </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <h1
           style={{
-            marginTop: "150px",
+            marginTop: "100px",
             fontFamily: `"Nunito", sans-serif`,
           }}
         >
           Logic
         </h1>
-        <img style={{ width: "1000px", margin: "50px 0 80px 0" }} src={TECHLOGIC} alt="TECHLOGIC" />
+        <img
+          style={{ width: "1000px", marginTop: "50px", marginBottom: "80px" }}
+          src={TECHLOGIC}
+          alt="TECHLOGIC"
+        />
       </div>
       <Footer />
     </>
