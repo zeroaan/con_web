@@ -66,7 +66,7 @@ const Home = () => {
   return (
     <>
       <DivScreen>
-        <Navbar color="black" borderColor="none" />
+        <Navbar color="black" />
         <DivOperation>
           <H2Operation>Operation</H2Operation>
           <ButtonOperation to={PathName} onClick={onClickOperation}>

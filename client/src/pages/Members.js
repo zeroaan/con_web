@@ -37,7 +37,7 @@ const ImgStyled = styled.img`
 const Members = () => {
   return (
     <>
-      <Navbar borderColor="none" />
+      <Navbar />
       <AboutTitle
         title="Member"
         subTitle="We're looking for great people to join our growing team."

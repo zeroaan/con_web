@@ -7,8 +7,8 @@ import Home from "pages/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
 import About from "pages/About";
-import Progress from "pages/Progress";
-import Stack from "pages/Stack";
+import History from "pages/History";
+import Tech from "pages/Tech";
 import Operation from "pages/Operation";
 import Members from "pages/Members";
 
@@ -21,8 +21,8 @@ const App = () => {
           <Route exact path="/login" component={Auth(Login, false)} />
           <Route exact path="/register" component={Auth(Register, false)} />
           <Route exact path="/about" component={Auth(About, null)} />
-          <Route exact path="/progress" component={Auth(Progress, null)} />
-          <Route exact path="/stack" component={Auth(Stack, null)} />
+          <Route exact path="/history" component={Auth(History, null)} />
+          <Route exact path="/tech" component={Auth(Tech, null)} />
           <Route exact path="/operation" component={Auth(Operation, true)} />
           <Route exact path="/member" component={Auth(Members, null)} />
         </Switch>

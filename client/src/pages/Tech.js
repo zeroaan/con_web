@@ -2,21 +2,18 @@ import React from "react";
 
 import Navbar from "components/Navbar";
 import AboutTitle from "components/AboutTitle";
-import AboutContent from "components/AboutContent";
-import Footer from "components/Footer";
 
-const About = () => {
+const Tech = () => {
   return (
     <>
       <Navbar />
       <AboutTitle
-        title="About Con."
+        title="Tech Stack"
         subTitle="We're looking for great people to join our growing team."
       />
-      <AboutContent />
-      <Footer />
+      <div>tech</div>
     </>
   );
 };
 
-export default About;
+export default Tech;

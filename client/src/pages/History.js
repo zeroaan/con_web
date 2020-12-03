@@ -2,21 +2,18 @@ import React from "react";
 
 import Navbar from "components/Navbar";
 import AboutTitle from "components/AboutTitle";
-import AboutContent from "components/AboutContent";
-import Footer from "components/Footer";
 
-const About = () => {
+const History = () => {
   return (
     <>
       <Navbar />
       <AboutTitle
-        title="About Con."
+        title="History"
         subTitle="We're looking for great people to join our growing team."
       />
-      <AboutContent />
-      <Footer />
+      <div>history</div>
     </>
   );
 };
 
-export default About;
+export default History;

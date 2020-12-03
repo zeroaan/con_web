@@ -18,8 +18,8 @@ const DivNav = styled.div`
   font-family: "Nunito", sans-serif;
   padding: 0 9vw;
   background-color: rgb(255, 255, 255, 0.5);
-  border-bottom: 1px solid ${(props) => props.borderColor || "black"};
   z-index: 1;
+  // border-bottom: 1px solid ${(props) => props.borderColor || "black"};
 `;
 const ImgLogo = styled.img`
   width: 50px;
@@ -43,7 +43,7 @@ const DivNavMenu = styled.div`
   }
 `;
 
-const Navbar = ({ color, borderColor }) => {
+const Navbar = ({ color }) => {
   const navEl = useRef(null);
   const prevScrollTop = useRef(0);
   const nowScrollTop = useRef(0);
@@ -67,14 +67,14 @@ const Navbar = ({ color, borderColor }) => {
 
   return (
     <>
-      <DivNav ref={navEl} borderColor={borderColor}>
+      <DivNav ref={navEl}>
         <Link to="/">
           <ImgLogo src={logo} alt="LOGO" />
         </Link>
         <DivNavMenu color={color}>
           <Link to="/about">About</Link>
-          <Link to="/progress">Progress</Link>
-          <Link to="/stack">Stack</Link>
+          <Link to="/tech">Tech</Link>
+          <Link to="/history">History</Link>
           <Link to="/member">Member</Link>
         </DivNavMenu>
         <LoginButton color={color} />
