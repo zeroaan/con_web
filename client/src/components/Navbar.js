@@ -72,7 +72,7 @@ const Navbar = ({ color, borderColor }) => {
           <ImgLogo src={logo} alt="LOGO" />
         </Link>
         <DivNavMenu color={color}>
-          <Link to="/concept">Concept</Link>
+          <Link to="/about">About</Link>
           <Link to="/progress">Progress</Link>
           <Link to="/stack">Stack</Link>
           <Link to="/member">Member</Link>

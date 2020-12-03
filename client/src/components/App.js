@@ -6,7 +6,7 @@ import Auth from "hoc/auth";
 import Home from "pages/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
-import Concept from "pages/Concept";
+import About from "pages/About";
 import Progress from "pages/Progress";
 import Stack from "pages/Stack";
 import Operation from "pages/Operation";
@@ -20,7 +20,7 @@ const App = () => {
           <Route exact path="/" component={Auth(Home, null)} />
           <Route exact path="/login" component={Auth(Login, false)} />
           <Route exact path="/register" component={Auth(Register, false)} />
-          <Route exact path="/concept" component={Auth(Concept, null)} />
+          <Route exact path="/about" component={Auth(About, null)} />
           <Route exact path="/progress" component={Auth(Progress, null)} />
           <Route exact path="/stack" component={Auth(Stack, null)} />
           <Route exact path="/operation" component={Auth(Operation, true)} />

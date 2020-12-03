@@ -4,7 +4,7 @@ import Navbar from "components/Navbar";
 const Members = () => {
   return (
     <>
-      <Navbar />
+      <Navbar borderColor="none" />
       <div>member</div>
     </>
   );
