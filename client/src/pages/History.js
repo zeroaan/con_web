@@ -9,7 +9,7 @@ const History = () => {
       <Navbar />
       <AboutTitle
         title="History"
-        subTitle="We're looking for great people to join our growing team."
+        subTitle="We're creating solutions for the future of automated logistics warehouse."
       />
       <div>history</div>
     </>
