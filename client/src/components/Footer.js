@@ -10,9 +10,7 @@ const Footer = () => {
           backgroundColor: "rgba(0,0,0,0.1)",
           marginTop: "150px",
         }}
-      >
-        Footer
-      </div>
+      ></div>
     </>
   );
 };

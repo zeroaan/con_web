@@ -7,7 +7,7 @@ const DivStyled = styled.div`
   justify-content: center;
   align-items: center;
   height: 450px;
-  color: rgb(75, 75, 75);
+  color: rgb(25, 25, 25);
   background-color: rgba(60, 155, 235, 0.2);
   padding-top: 40px;
   font-family: "Nunito", sans-serif;

@@ -4,6 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 
 import LOGO from "assets/logo.png";
+import LOGO2 from "assets/logo2.png";
 import RUN from "assets/navbar/run.png";
 
 import LoginButton from "components/LoginButton";
@@ -21,7 +22,6 @@ const DivNav = styled.div`
   height: 60px;
   font-family: "Nunito", sans-serif;
   padding: 0 9vw;
-  background-color: rgb(255, 255, 255, 0.5);
   z-index: 1;
   // border-bottom: 1px solid ${(props) => props.borderColor || "black"};
 `;
@@ -43,7 +43,7 @@ const DivNavMenu = styled.div`
     color: ${(props) => props.color || "black"};
   }
   a:hover {
-    border-bottom: 5px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 5px solid ${(props) => props.hoverColor || "rgb(39, 132, 255)"};
   }
 `;
 const ButtonOperation = styled(Link)`
@@ -52,7 +52,7 @@ const ButtonOperation = styled(Link)`
   cursor: pointer;
 `;
 
-const Navbar = ({ color }) => {
+const Navbar = ({ color, hoverColor, homeLogo }) => {
   const navEl = useRef(null);
   const prevScrollTop = useRef(0);
   const nowScrollTop = useRef(0);
@@ -101,9 +101,9 @@ const Navbar = ({ color }) => {
     <>
       <DivNav ref={navEl}>
         <Link to="/">
-          <ImgLogo src={LOGO} alt="LOGO" />
+          <ImgLogo src={homeLogo ? LOGO2 : LOGO} alt="LOGO" />
         </Link>
-        <DivNavMenu color={color}>
+        <DivNavMenu color={color} hoverColor={hoverColor}>
           <Link to="/about">About</Link>
           <Link to="/tech">Tech</Link>
           <Link to="/history">History</Link>
