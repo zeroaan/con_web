@@ -8,7 +8,7 @@ const DivStyled = styled.div`
   align-items: center;
   height: 450px;
   color: rgb(25, 25, 25);
-  background-color: rgba(60, 155, 235, 0.2);
+  background-color: rgba(60, 155, 235, 0.4);
   padding-top: 40px;
   font-family: "Nunito", sans-serif;
   font-weight: 300;
