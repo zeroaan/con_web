@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import ROS from "assets/tech/ros.png";
@@ -15,102 +15,59 @@ import Navbar from "components/Navbar";
 import AboutTitle from "components/AboutTitle";
 import Footer from "components/Footer";
 
-const ImgStyled = styled.img`
+const DivTech = styled.div`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+const H1Tech = styled.h1`
+  font-family: "Nunito", sans-serif;
+  margin: 100px 0 50px 0;
+`;
+const DivTechImgBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1080px;
+  height: 420px;
+`;
+const ImgTech = styled.img`
   width: 200px;
   margin: 0 35px;
 `;
+const ImgTechLogic = styled.img`
+  width: 950px;
+  margin-bottom: 100px;
+`;
 
 const Tech = () => {
-  const techEl = useRef(null);
-
-  useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      const scrollTop = ("scroll", e.target.scrollingElement.scrollTop);
-      console.log(scrollTop);
-      if (scrollTop > 1000) {
-        if (techEl.current) {
-          techEl.current.style.position = "static";
-        }
-      } else {
-        if (techEl.current) {
-          techEl.current.style.position = "sticky";
-        }
-      }
-    });
-  }, []);
-
   return (
     <>
       <Navbar />
       <AboutTitle
         title="Technology"
-        subTitle="We're looking for great people to join our growing team."
+        subTitle="We're creating solutions for the future of automated logistics warehouse."
       />
-      <div
-        ref={techEl}
-        style={{
-          position: "sticky",
-          top: "0px",
-          height: "100vh",
-          backgroundColor: "white",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            margin: "50px 0 0 0",
-          }}
-        >
-          <h1
-            style={{
-              fontFamily: `"Nunito", sans-serif`,
-              marginBottom: "50px",
-            }}
-          >
-            Tech Stack
-          </h1>
-          <div>
-            <ImgStyled src={ROS} alt="ROS" />
-            <ImgStyled src={RASP} alt="RASP" />
-            <ImgStyled src={ARDU} alt="ARDU" />
-            <ImgStyled src={CPP} alt="CPP" />
-          </div>
-        </div>
-        <div>
-          <ImgStyled src={MONGO} alt="MONGO" />
-          <ImgStyled src={EXPRESS} alt="EXPRESS" />
-          <ImgStyled src={REACT} alt="REACT" />
-          <ImgStyled src={NODEJS} alt="NODEJS" />
-        </div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <h1
-          style={{
-            marginTop: "100px",
-            fontFamily: `"Nunito", sans-serif`,
-          }}
-        >
-          Logic
-        </h1>
-        <img
-          style={{ width: "1000px", marginTop: "50px", marginBottom: "80px" }}
-          src={TECHLOGIC}
-          alt="TECHLOGIC"
-        />
-      </div>
+      <DivTech>
+        <H1Tech>Tech Stack</H1Tech>
+        <DivTechImgBox>
+          <ImgTech src={ROS} alt="ROS" />
+          <ImgTech src={RASP} alt="RASP" />
+          <ImgTech src={ARDU} alt="ARDU" />
+          <ImgTech src={CPP} alt="CPP" />
+          <ImgTech src={MONGO} alt="MONGO" />
+          <ImgTech src={EXPRESS} alt="EXPRESS" />
+          <ImgTech src={REACT} alt="REACT" />
+          <ImgTech src={NODEJS} alt="NODEJS" />
+        </DivTechImgBox>
+      </DivTech>
+      <DivTech>
+        <H1Tech>Tech Logic</H1Tech>
+        <ImgTechLogic src={TECHLOGIC} alt="TECHLOGIC" />
+      </DivTech>
       <Footer />
     </>
   );
