@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <DivScreen>
-        <Navbar color="white" hoverColor="none" homeLogo />
+        <Navbar color="white" home />
         <div
           style={{
             maxWidth: "100vw",

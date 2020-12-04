@@ -23,7 +23,6 @@ const DivNav = styled.div`
   font-family: "Nunito", sans-serif;
   padding: 0 9vw;
   z-index: 1;
-  // border-bottom: 1px solid ${(props) => props.borderColor || "black"};
 `;
 const ImgLogo = styled.img`
   margin-top: 5px;
@@ -43,7 +42,7 @@ const DivNavMenu = styled.div`
     color: ${(props) => props.color || "black"};
   }
   a:hover {
-    border-bottom: 5px solid ${(props) => props.hoverColor || "rgb(39, 132, 255)"};
+    border-bottom: 5px solid ${(props) => (props.home ? "none" : "rgb(39, 132, 255)")};
   }
 `;
 const ButtonOperation = styled(Link)`
@@ -52,7 +51,7 @@ const ButtonOperation = styled(Link)`
   cursor: pointer;
 `;
 
-const Navbar = ({ color, hoverColor, homeLogo }) => {
+const Navbar = ({ color, home }) => {
   const navEl = useRef(null);
   const prevScrollTop = useRef(0);
   const nowScrollTop = useRef(0);
@@ -101,9 +100,9 @@ const Navbar = ({ color, hoverColor, homeLogo }) => {
     <>
       <DivNav ref={navEl}>
         <Link to="/">
-          <ImgLogo src={homeLogo ? LOGO2 : LOGO} alt="LOGO" />
+          <ImgLogo src={home ? LOGO2 : LOGO} alt="LOGO" />
         </Link>
-        <DivNavMenu color={color} hoverColor={hoverColor}>
+        <DivNavMenu color={color} home={home}>
           <Link to="/about">About</Link>
           <Link to="/tech">Tech</Link>
           <Link to="/history">History</Link>
