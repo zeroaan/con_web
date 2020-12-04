@@ -26,8 +26,7 @@ const DivNav = styled.div`
   // border-bottom: 1px solid ${(props) => props.borderColor || "black"};
 `;
 const ImgLogo = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 80px;
 `;
 const DivNavMenu = styled.div`
   flex: 2;
@@ -109,7 +108,7 @@ const Navbar = ({ color }) => {
           <Link to="/member">Member</Link>
         </DivNavMenu>
         <ButtonOperation to={PathName} onClick={onClickOperation}>
-          <img style={{ width: "50px", marginRight: "5px" }} src={RUN} alt="RUN" />
+          <img style={{ width: "35px", marginRight: "5px" }} src={RUN} alt="RUN" />
         </ButtonOperation>
         {operationState ? <Operation onClickClose={onClickClose} /> : null}
         <LoginButton color={color} />

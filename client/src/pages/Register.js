@@ -91,11 +91,7 @@ export default function Register() {
       <CssBaseline />
       <div className={classes.paper}>
         <Link to="/">
-          <img
-            style={{ width: "60px", height: "60px", marginBottom: "15px" }}
-            src={LOGO}
-            alt="LOGO"
-          />
+          <img style={{ width: "110px", marginBottom: "15px" }} src={LOGO} alt="LOGO" />
         </Link>
         <Typography component="h1" variant="h5">
           Create Account
