@@ -18,7 +18,7 @@ const DivNav = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 100vw;
-  height: 70px;
+  height: 60px;
   font-family: "Nunito", sans-serif;
   padding: 0 9vw;
   background-color: rgb(255, 255, 255, 0.5);
@@ -26,6 +26,7 @@ const DivNav = styled.div`
   // border-bottom: 1px solid ${(props) => props.borderColor || "black"};
 `;
 const ImgLogo = styled.img`
+  margin-top: 5px;
   width: 80px;
 `;
 const DivNavMenu = styled.div`
@@ -34,18 +35,19 @@ const DivNavMenu = styled.div`
   margin-left: 3vw;
   a {
     padding: 0 2vw;
-    height: 70px;
+    height: 60px;
     font-size: 18px;
-    line-height: 70px;
+    line-height: 60px;
     user-select: none;
     text-decoration: none;
     color: ${(props) => props.color || "black"};
   }
   a:hover {
-    border-bottom: 5px solid rgb(56, 94, 217);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.3);
   }
 `;
 const ButtonOperation = styled(Link)`
+  margin-top: 5px;
   text-decoration: none;
   cursor: pointer;
 `;

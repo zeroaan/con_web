@@ -17,6 +17,9 @@ const PName = styled.p`
   font-size: 23px;
   font-family: "Nunito", sans-serif;
 `;
+const PDesc = styled.p`
+  font-family: "Nunito", sans-serif;
+`;
 const DivDesc = styled.div`
   width: 250px;
   border-top: 3px solid rgba(0, 0, 0, 0.1);
@@ -51,7 +54,7 @@ const MemberContent = ({ img, name, desc, git }) => {
         <ImgStyled src={img} alt="FRODO" />
         <PName>{name}</PName>
         <DivDesc>
-          <p>{desc.text}</p>
+          <PDesc>{desc.text}</PDesc>
           <AGit href={git} target="_blank">
             <GitHubIcon className={classes.gitIcon} />
           </AGit>

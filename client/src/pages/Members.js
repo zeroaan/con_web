@@ -52,7 +52,7 @@ const Members = () => {
   const embededTeam = [
     {
       img: `${FRODO}`,
-      name: "이지형",
+      name: "L. Ji Hyoung",
       desc: {
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
@@ -61,7 +61,7 @@ const Members = () => {
     },
     {
       img: `${CON}`,
-      name: "변상준",
+      name: "B. Sang Jun",
       desc: {
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
@@ -72,7 +72,7 @@ const Members = () => {
   const webTeam = [
     {
       img: `${MUZI}`,
-      name: "안진영",
+      name: "A. Jin Young",
       desc: {
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
@@ -81,7 +81,7 @@ const Members = () => {
     },
     {
       img: `${RYAN}`,
-      name: "이현재",
+      name: "L. Hyun Jae",
       desc: {
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
@@ -90,7 +90,7 @@ const Members = () => {
     },
     {
       img: `${APEACH}`,
-      name: "최유솜",
+      name: "C. Yu Som",
       desc: {
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
