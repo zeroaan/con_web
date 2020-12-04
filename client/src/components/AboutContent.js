@@ -13,7 +13,7 @@ const DivStyled = styled.div`
   align-items: center;
 `;
 const ImgIconStyled = styled.img`
-  width: 700px;
+  width: 800px;
   margin: auto;
   margin-top: 60px;
   margin-bottom: 80px;
@@ -22,8 +22,10 @@ const PContent = styled.p`
   margin-left: 30px;
   margin-bottom: 30px;
   width: 900px;
-  font-size: 18px;
+  font-size: 17px;
   font-family: "Nunito", sans-serif;
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
 `;
 const DivImages = styled.div`
   display: flex;
@@ -31,7 +33,7 @@ const DivImages = styled.div`
   align-items: center;
 `;
 const ImgCon = styled.img`
-  width: 320px;
+  width: 300px;
   margin: 30px;
 `;
 
@@ -54,15 +56,6 @@ const AboutContent = () => {
           We want to enable robots to join in logistics industry as a key assistant to warehouse. We
           are hiring passionate talent to disrupt the logistics industry. If you want to dive into
           deep-tech, then Con, co. is a best place for you.
-        </PContent>
-        <PContent>
-          What is LiDAR? LiDAR is a remote sensing technology which uses the pulse from a laser to
-          collect measurements which can then be used to create 3D models and maps of objects and
-          environments.
-          <br /> How does LiDAR work? LiDAR works in a similar way to Radar and Sonar yet uses light
-          waves from a laser, instead of radio or sound waves. A LiDAR system calculates how long it
-          takes for the light to hit an object or surface and reflect back to the scanner. The
-          distance is then calculated using the velocity of light.
         </PContent>
         <DivImages>
           <ImgCon src={ABOUT2} alt="ABOUT2" />
