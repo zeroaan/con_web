@@ -13,6 +13,7 @@ import TECHLOGIC from "assets/tech/techLogic.png";
 
 import Navbar from "components/Navbar";
 import AboutTitle from "components/AboutTitle";
+import TechImg from "components/TechImg";
 import Footer from "components/Footer";
 
 const DivTech = styled.div`
@@ -34,16 +35,23 @@ const DivTechImgBox = styled.div`
   width: 1080px;
   height: 420px;
 `;
-const ImgTech = styled.img`
-  width: 200px;
-  margin: 0 35px;
-`;
 const ImgTechLogic = styled.img`
   width: 950px;
   margin-bottom: 100px;
 `;
 
 const Tech = () => {
+  const techImg = [
+    { name: "Ros", src: `${ROS}` },
+    { name: "Raspberry Pi", src: `${RASP}` },
+    { name: "Arduino", src: `${ARDU}` },
+    { name: "C++", src: `${CPP}` },
+    { name: "Mongo DB", src: `${MONGO}` },
+    { name: "Express JS", src: `${EXPRESS}` },
+    { name: "React", src: `${REACT}` },
+    { name: "Node JS", src: `${NODEJS}` },
+  ];
+
   return (
     <>
       <Navbar />
@@ -54,14 +62,9 @@ const Tech = () => {
       <DivTech>
         <H1Tech>Tech Stack</H1Tech>
         <DivTechImgBox>
-          <ImgTech src={ROS} alt="ROS" />
-          <ImgTech src={RASP} alt="RASP" />
-          <ImgTech src={ARDU} alt="ARDU" />
-          <ImgTech src={CPP} alt="CPP" />
-          <ImgTech src={MONGO} alt="MONGO" />
-          <ImgTech src={EXPRESS} alt="EXPRESS" />
-          <ImgTech src={REACT} alt="REACT" />
-          <ImgTech src={NODEJS} alt="NODEJS" />
+          {techImg.map((v) => (
+            <TechImg name={v.name} src={v.src} />
+          ))}
         </DivTechImgBox>
       </DivTech>
       <DivTech>
