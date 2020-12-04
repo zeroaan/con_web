@@ -63,7 +63,7 @@ const Tech = () => {
         <H1Tech>Tech Stack</H1Tech>
         <DivTechImgBox>
           {techImg.map((v) => (
-            <TechImg name={v.name} src={v.src} />
+            <TechImg key={v.name} name={v.name} src={v.src} />
           ))}
         </DivTechImgBox>
       </DivTech>
