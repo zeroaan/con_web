@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { registerUser } from "store/actions/user";
-import logo from "assets/logo.png";
+import LOGO from "assets/logo.png";
 
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -93,7 +93,7 @@ export default function Register() {
         <Link to="/">
           <img
             style={{ width: "60px", height: "60px", marginBottom: "15px" }}
-            src={logo}
+            src={LOGO}
             alt="LOGO"
           />
         </Link>

@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 
-import logo from "assets/logo.png";
-import run from "assets/run.png";
+import LOGO from "assets/logo.png";
+import RUN from "assets/navbar/run.png";
 
 import LoginButton from "components/LoginButton";
 import Operation from "pages/Operation";
@@ -100,7 +100,7 @@ const Navbar = ({ color }) => {
     <>
       <DivNav ref={navEl}>
         <Link to="/">
-          <ImgLogo src={logo} alt="LOGO" />
+          <ImgLogo src={LOGO} alt="LOGO" />
         </Link>
         <DivNavMenu color={color}>
           <Link to="/about">About</Link>
@@ -109,7 +109,7 @@ const Navbar = ({ color }) => {
           <Link to="/member">Member</Link>
         </DivNavMenu>
         <ButtonOperation to={PathName} onClick={onClickOperation}>
-          <img style={{ width: "50px", marginRight: "5px" }} src={run} alt="run" />
+          <img style={{ width: "50px", marginRight: "5px" }} src={RUN} alt="RUN" />
         </ButtonOperation>
         {operationState ? <Operation onClickClose={onClickClose} /> : null}
         <LoginButton color={color} />

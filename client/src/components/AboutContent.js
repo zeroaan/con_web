@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import Icon from "assets/icon.png";
-import Concept1 from "assets/concept1.png";
-import Concept2 from "assets/concept2.png";
-import Concept3 from "assets/concept3.png";
+import ABOUT1 from "assets/about/about1.png";
+import ABOUT2 from "assets/about/about2.png";
+import ABOUT3 from "assets/about/about3.png";
+import ABOUT4 from "assets/about/about4.png";
 
 const DivStyled = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ const AboutContent = () => {
   return (
     <>
       <DivStyled>
-        <ImgIconStyled src={Icon} alt="ICON" />
+        <ImgIconStyled src={ABOUT1} alt="ABOUT1" />
         <PContent>
           We are creating solutions for the future of automated logistics warehouse. Our product is
           an AI-driven autonomous robot using LiDAR that helps with the running and carrying roles
@@ -65,9 +65,9 @@ const AboutContent = () => {
           distance is then calculated using the velocity of light.
         </PContent>
         <DivImages>
-          <ImgCon src={Concept1} alt="CONCEPT1" />
-          <ImgCon src={Concept2} alt="CONCEPT2" />
-          <ImgCon src={Concept3} alt="CONCEPT3" />
+          <ImgCon src={ABOUT2} alt="ABOUT2" />
+          <ImgCon src={ABOUT3} alt="ABOUT3" />
+          <ImgCon src={ABOUT4} alt="ABOUT4" />
         </DivImages>
       </DivStyled>
     </>

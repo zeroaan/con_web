@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CloseIcon from "@material-ui/icons/Close";
 
-import rosMap from "assets/rosmap.png";
+import ROSMAP from "assets/operation/rosmap.png";
 
 const DivBlack = styled.div`
   position: fixed;
@@ -51,7 +51,7 @@ const Operation = ({ onClickClose }) => {
         <CloseIconButton onClick={onClickClose} />
         <DivRos>
           <DivPoint>●</DivPoint>
-          <ImgRosMap src={rosMap} alt="MAP" />
+          <ImgRosMap src={ROSMAP} alt="ROSMAP" />
         </DivRos>
       </DivOperation>
     </DivBlack>

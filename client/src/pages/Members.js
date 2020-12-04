@@ -4,11 +4,11 @@ import MemoryIcon from "@material-ui/icons/Memory";
 import LanguageIcon from "@material-ui/icons/Language";
 import styled from "styled-components";
 
-import CON from "assets/con1.png";
-import RYAN from "assets/ryan.png";
-import MUZI from "assets/muzi.png";
-import FRODO from "assets/frodo.png";
-import APEACH from "assets/apeach.png";
+import CON from "assets/member/con1.png";
+import RYAN from "assets/member/ryan.png";
+import MUZI from "assets/member/muzi.png";
+import FRODO from "assets/member/frodo.png";
+import APEACH from "assets/member/apeach.png";
 
 import Navbar from "components/Navbar";
 import AboutTitle from "components/AboutTitle";

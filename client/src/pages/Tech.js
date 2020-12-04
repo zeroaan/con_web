@@ -1,15 +1,15 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
-import ROS from "assets/ros.png";
-import RASP from "assets/rasp.png";
-import ARDU from "assets/ardu.png";
-import CPP from "assets/cpp.png";
-import MONGO from "assets/mongo.png";
-import EXPRESS from "assets/express.png";
-import REACT from "assets/react.png";
-import NODEJS from "assets/nodejs.png";
-import TECHLOGIC from "assets/logic.png";
+import ROS from "assets/tech/ros.png";
+import RASP from "assets/tech/rasp.png";
+import ARDU from "assets/tech/ardu.png";
+import CPP from "assets/tech/cpp.png";
+import MONGO from "assets/tech/mongo.png";
+import EXPRESS from "assets/tech/express.png";
+import REACT from "assets/tech/react.png";
+import NODEJS from "assets/tech/nodejs.png";
+import TECHLOGIC from "assets/tech/techLogic.png";
 
 import Navbar from "components/Navbar";
 import AboutTitle from "components/AboutTitle";
