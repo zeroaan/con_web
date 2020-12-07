@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { logoutUser } from "store/actions/user";
+import { logoutRequest } from "store/actions/user";
 
 const LinkLogInOutBt = styled(Link)`
   text-align: center;
@@ -29,7 +29,7 @@ const LoginButton = ({ color }) => {
     };
   }, [userData]);
   const onClickLogout = () => {
-    dispatch(logoutUser());
+    dispatch(logoutRequest());
   };
 
   const LoginBt = () => {

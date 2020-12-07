@@ -1,42 +1,81 @@
-import axios from "axios";
-import { LOGIN_USER, REGISTER_USER, AUTH_USER, LOGOUT_USER } from "./types";
+import {
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  LOGOUT_REQUEST,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAILURE,
+  REGISTER_REQUEST,
+  REGISTER_SUCCESS,
+  REGISTER_FAILURE,
+  AUTH_REQUEST,
+  AUTH_USER,
+} from "./types";
 
-export const loginUser = (dataToSubmit) => {
-  const request = axios
-    .post("/api/users/login", dataToSubmit) // 서버에 request날림
-    .then((response) => response.data); // 서버에서 받은 data를 request에 저장
-
+export const loginRequest = (loginData) => {
   return {
-    type: LOGIN_USER,
-    payload: request,
+    type: LOGIN_REQUEST,
+    loginData,
   };
-}; // data to submit : Email, Password
-
-export const registerUser = (dataToSubmit) => {
-  const request = axios.post("/api/users/register", dataToSubmit).then((response) => response.data);
-
+};
+export const loginSuccess = (response) => {
   return {
-    type: REGISTER_USER,
-    payload: request,
+    type: LOGIN_SUCCESS,
+    payload: response,
+  };
+};
+export const loginFailure = (response) => {
+  return {
+    type: LOGIN_FAILURE,
+    payload: response,
   };
 };
 
-export const auth = () => {
-  const request = axios
-    .get("/api/users/auth") // get method로 받아옴, get이니까 body부분은 필요없음
-    .then((response) => response.data);
+export const logoutRequest = () => {
+  return {
+    type: LOGOUT_REQUEST,
+  };
+};
+export const logoutSuccess = (response) => {
+  return {
+    type: LOGOUT_SUCCESS,
+    payload: response,
+  };
+};
+export const logoutFailure = (response) => {
+  return {
+    type: LOGOUT_FAILURE,
+    payload: response,
+  };
+};
 
+export const registerRequest = (registerData) => {
+  return {
+    type: REGISTER_REQUEST,
+    registerData,
+  };
+};
+export const registerSuccess = (response) => {
+  return {
+    type: REGISTER_SUCCESS,
+    payload: response,
+  };
+};
+export const registerFailure = (response) => {
+  return {
+    type: REGISTER_FAILURE,
+    payload: response,
+  };
+};
+
+export const authRequest = () => {
+  return {
+    type: AUTH_REQUEST,
+  };
+};
+export const authUser = (response) => {
   return {
     type: AUTH_USER,
-    payload: request,
-  };
-};
-
-export const logoutUser = () => {
-  const request = axios.get(`/api/users/logout`).then((response) => response.data);
-
-  return {
-    type: LOGOUT_USER,
-    payload: request,
+    payload: response,
   };
 };

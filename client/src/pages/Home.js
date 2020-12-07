@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import SCREEN from "assets/screen.png";
@@ -11,6 +12,9 @@ const DivScreen = styled.div`
   background: center/cover no-repeat url(${SCREEN});
 `;
 const Home = () => {
+  const user = useSelector((store) => store.user);
+  console.log(user);
+
   return (
     <>
       <DivScreen>

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { loginUser } from "store/actions/user";
+import { loginRequest } from "store/actions/user";
 import LOGO from "assets/logo.png";
 
 import Button from "@material-ui/core/Button";
@@ -42,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
-  const history = useHistory();
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
@@ -66,13 +64,7 @@ export default function Login() {
       password: password,
     };
 
-    dispatch(loginUser(body)).then((response) => {
-      if (response.payload.loginSuccess) {
-        history.push("/");
-      } else {
-        alert("Error");
-      }
-    });
+    dispatch(loginRequest(body));
   };
 
   return (

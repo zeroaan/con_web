@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { registerUser } from "store/actions/user";
+import { registerRequest } from "store/actions/user";
 import LOGO from "assets/logo.png";
 
 import Button from "@material-ui/core/Button";
@@ -77,13 +77,7 @@ export default function Register() {
       password: password,
     };
 
-    dispatch(registerUser(body)).then((response) => {
-      if (response.payload.success) {
-        history.push("/");
-      } else {
-        alert("Failed to sign up");
-      }
-    });
+    dispatch(registerRequest(body));
   };
 
   return (
