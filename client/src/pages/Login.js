@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -41,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
@@ -64,7 +66,7 @@ export default function Login() {
       password: password,
     };
 
-    dispatch(loginRequest(body));
+    dispatch(loginRequest(body, history));
   };
 
   return (

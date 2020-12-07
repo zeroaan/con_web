@@ -18,8 +18,13 @@ function* login(action) {
   try {
     const response = yield call(loginApi, action.loginData);
     yield put(loginSuccess(response.data));
+    if (response.data.loginSuccess) {
+      yield call(action.history.push, "/");
+    } else {
+      alert("로그인 실패");
+    }
   } catch (error) {
-    yield put(loginFailure(error));
+    yield put(loginFailure(error.message));
   }
 }
 
@@ -31,7 +36,7 @@ function* logout() {
     const response = yield call(logoutApi);
     yield put(logoutSuccess(response.data));
   } catch (error) {
-    yield put(logoutFailure(error));
+    yield put(logoutFailure(error.message));
   }
 }
 
@@ -42,17 +47,35 @@ function* register(action) {
   try {
     const response = yield call(registerApi, action.registerData);
     yield put(registerSuccess(response.data));
+    if (response.data.success) {
+      yield call(action.history.push, "/");
+    } else {
+      alert("회원가입 실패");
+    }
   } catch (error) {
-    yield put(registerFailure(error));
+    yield put(registerFailure(error.message));
   }
 }
 
 function authApi() {
   return axios.get("/api/users/auth");
 }
-function* auth() {
+function* auth(action) {
   const response = yield call(authApi);
   yield put(authUser(response.data));
+  if (response.data.isAuth) {
+    if (action.option) {
+      yield call(action.history.push, "/login");
+    }
+  } else {
+    if (action.adminRoute && !response.data.isAdmin) {
+      yield call(action.history.push, "/");
+    } else {
+      if (action.option === false) {
+        yield call(action.history.push, "/");
+      }
+    }
+  }
 }
 
 function* watchLogin() {

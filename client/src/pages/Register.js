@@ -77,7 +77,7 @@ export default function Register() {
       password: password,
     };
 
-    dispatch(registerRequest(body));
+    dispatch(registerRequest(body, history));
   };
 
   return (

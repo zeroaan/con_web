@@ -12,10 +12,11 @@ import {
   AUTH_USER,
 } from "./types";
 
-export const loginRequest = (loginData) => {
+export const loginRequest = (loginData, history) => {
   return {
     type: LOGIN_REQUEST,
     loginData,
+    history,
   };
 };
 export const loginSuccess = (response) => {
@@ -49,10 +50,11 @@ export const logoutFailure = (response) => {
   };
 };
 
-export const registerRequest = (registerData) => {
+export const registerRequest = (registerData, history) => {
   return {
     type: REGISTER_REQUEST,
     registerData,
+    history,
   };
 };
 export const registerSuccess = (response) => {
@@ -68,9 +70,12 @@ export const registerFailure = (response) => {
   };
 };
 
-export const authRequest = () => {
+export const authRequest = (option, adminRoute, history) => {
   return {
     type: AUTH_REQUEST,
+    option,
+    adminRoute,
+    history,
   };
 };
 export const authUser = (response) => {
