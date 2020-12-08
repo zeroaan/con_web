@@ -8,7 +8,6 @@ import {
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
   REGISTER_FAILURE,
-  AUTH_REQUEST,
   AUTH_USER,
 } from "./types";
 
@@ -70,14 +69,6 @@ export const registerFailure = (error) => {
   };
 };
 
-export const authRequest = (option, adminRoute, history) => {
-  return {
-    type: AUTH_REQUEST,
-    option,
-    adminRoute,
-    history,
-  };
-};
 export const authUser = (result) => {
   return {
     type: AUTH_USER,
