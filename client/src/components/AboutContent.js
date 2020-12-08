@@ -12,6 +12,10 @@ const DivStyled = styled.div`
   justify-content: center;
   align-items: center;
 `;
+const H1Title = styled.h1`
+  margin-bottom: 30px;
+  font-family: "Nunito", sans-serif;
+`;
 const PContent = styled.p`
   margin-left: 15px;
   margin-bottom: 30px;
@@ -20,6 +24,10 @@ const PContent = styled.p`
   font-family: "Nunito", sans-serif;
   letter-spacing: 0.5px;
   word-spacing: 3px;
+`;
+const ImgAboutGif = styled.img`
+  margin-top: 80px;
+  width: 890px;
 `;
 
 const AboutContent = () => {
@@ -134,7 +142,7 @@ const AboutContent = () => {
             </p>
           </div>
         </div>
-        <h1 style={{ marginBottom: "30px", fontFamily: `"Nunito", sans-serif` }}>Con ?</h1>
+        <H1Title>Con ?</H1Title>
         <PContent>
           We are creating solutions for the future of automated logistics warehouse. Our product is
           an AI-driven autonomous robot using LiDAR that helps with the running and carrying roles
@@ -150,7 +158,7 @@ const AboutContent = () => {
           are hiring passionate talent to disrupt the logistics industry. If you want to dive into
           deep-tech, then Con, co. is a best place for you.
         </PContent>
-        <img style={{ marginTop: "90px", width: "890px" }} src={ABOUTGIF} alt="ABOUTGIF" />
+        <ImgAboutGif src={ABOUTGIF} alt="ABOUTGIF" />
       </DivStyled>
     </>
   );

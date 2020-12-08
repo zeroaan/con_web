@@ -24,7 +24,7 @@ const DivDesc = styled.div`
   width: 250px;
   border-top: 3px solid rgba(0, 0, 0, 0.1);
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
+  margin-top: 20px;
   padding: 20px 0;
 `;
 const AGit = styled.a`

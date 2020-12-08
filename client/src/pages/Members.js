@@ -21,7 +21,7 @@ const DivCon = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 110px 0 80px 0;
+  margin-top: 110px;
 `;
 const DivTeamTitle = styled.div`
   display: flex;

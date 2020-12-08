@@ -43,7 +43,6 @@ const DivTechImgBox = styled.div`
 `;
 const ImgTechLogic = styled.img`
   width: 950px;
-  margin-bottom: 30px;
 `;
 
 const Tech = () => {
