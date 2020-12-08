@@ -19,17 +19,17 @@ const UserReducer = (state = initialState, action) => {
     case LOGIN_SUCCESS:
       return { ...state, loginData: action.payload };
     case LOGIN_FAILURE:
-      return { ...state, loginError: action.payload };
+      return { ...state, error: action.error };
 
     case LOGOUT_SUCCESS:
       return { ...state, userData: action.payload, loginData: {} };
     case LOGOUT_FAILURE:
-      return { ...state, logoutError: action.payload };
+      return { ...state, error: action.error };
 
     case REGISTER_SUCCESS:
       return { ...state, registerData: action.payload };
     case REGISTER_FAILURE:
-      return { ...state, registerError: action.payload };
+      return { ...state, error: action.error };
 
     case AUTH_USER:
       return { ...state, userData: action.payload };

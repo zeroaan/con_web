@@ -19,16 +19,16 @@ export const loginRequest = (loginData, history) => {
     history,
   };
 };
-export const loginSuccess = (response) => {
+export const loginSuccess = (result) => {
   return {
     type: LOGIN_SUCCESS,
-    payload: response,
+    payload: result,
   };
 };
-export const loginFailure = (response) => {
+export const loginFailure = (error) => {
   return {
     type: LOGIN_FAILURE,
-    payload: response,
+    error,
   };
 };
 
@@ -37,16 +37,16 @@ export const logoutRequest = () => {
     type: LOGOUT_REQUEST,
   };
 };
-export const logoutSuccess = (response) => {
+export const logoutSuccess = (result) => {
   return {
     type: LOGOUT_SUCCESS,
-    payload: response,
+    payload: result,
   };
 };
-export const logoutFailure = (response) => {
+export const logoutFailure = (error) => {
   return {
     type: LOGOUT_FAILURE,
-    payload: response,
+    error,
   };
 };
 
@@ -57,16 +57,16 @@ export const registerRequest = (registerData, history) => {
     history,
   };
 };
-export const registerSuccess = (response) => {
+export const registerSuccess = (result) => {
   return {
     type: REGISTER_SUCCESS,
-    payload: response,
+    payload: result,
   };
 };
-export const registerFailure = (response) => {
+export const registerFailure = (error) => {
   return {
     type: REGISTER_FAILURE,
-    payload: response,
+    error,
   };
 };
 
@@ -78,9 +78,9 @@ export const authRequest = (option, adminRoute, history) => {
     history,
   };
 };
-export const authUser = (response) => {
+export const authUser = (result) => {
   return {
     type: AUTH_USER,
-    payload: response,
+    payload: result,
   };
 };

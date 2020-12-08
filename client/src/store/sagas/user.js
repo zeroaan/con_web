@@ -16,12 +16,12 @@ function loginApi(loginData) {
 }
 function* login(action) {
   try {
-    const response = yield call(loginApi, action.loginData);
-    yield put(loginSuccess(response.data));
-    if (response.data.loginSuccess) {
+    const result = yield call(loginApi, action.loginData);
+    yield put(loginSuccess(result.data));
+    if (result.data.loginSuccess) {
       yield call(action.history.push, "/");
     } else {
-      alert("로그인 실패");
+      alert("아이디 또는 비밀번호가 틀립니다.");
     }
   } catch (error) {
     yield put(loginFailure(error.message));
@@ -33,8 +33,8 @@ function logoutApi() {
 }
 function* logout() {
   try {
-    const response = yield call(logoutApi);
-    yield put(logoutSuccess(response.data));
+    const result = yield call(logoutApi);
+    yield put(logoutSuccess(result.data));
   } catch (error) {
     yield put(logoutFailure(error.message));
   }
@@ -45,12 +45,14 @@ function registerApi(registerData) {
 }
 function* register(action) {
   try {
-    const response = yield call(registerApi, action.registerData);
-    yield put(registerSuccess(response.data));
-    if (response.data.success) {
+    const result = yield call(registerApi, action.registerData);
+    yield put(registerSuccess(result.data));
+    if (result.data.success) {
+      const result2 = yield call(loginApi, action.registerData);
+      yield put(loginSuccess(result2.data));
       yield call(action.history.push, "/");
     } else {
-      alert("회원가입 실패");
+      alert("이미 등록된 이메일입니다.");
     }
   } catch (error) {
     yield put(registerFailure(error.message));
@@ -61,14 +63,14 @@ function authApi() {
   return axios.get("/api/users/auth");
 }
 function* auth(action) {
-  const response = yield call(authApi);
-  yield put(authUser(response.data));
-  if (!response.data.isAuth) {
+  const result = yield call(authApi);
+  yield put(authUser(result.data));
+  if (!result.data.isAuth) {
     if (action.option) {
       yield call(action.history.push, "/login");
     }
   } else {
-    if (action.adminRoute && !response.data.isAdmin) {
+    if (action.adminRoute && !result.data.isAdmin) {
       yield call(action.history.push, "/");
     } else {
       if (action.option === false) {
