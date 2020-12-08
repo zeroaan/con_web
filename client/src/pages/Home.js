@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import SCREEN from "assets/screen.png";
@@ -30,9 +29,6 @@ const PHomeSubTitle = styled.p`
 `;
 
 const Home = () => {
-  const user = useSelector((store) => store.user);
-  console.log(user);
-
   return (
     <>
       <DivScreen>
