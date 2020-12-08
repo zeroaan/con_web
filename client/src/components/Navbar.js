@@ -72,7 +72,7 @@ const Navbar = ({ color, home }) => {
         }
       }
 
-      // scrool을 올릴 땐 navbar가 보이고, scroll을 내릴 땐 navbar을 안 보이게 함
+      // scroll을 올릴 땐 navbar가 보이고, scroll을 내릴 땐 navbar을 안 보이게 함
       nowScrollTop.current = scrollTop;
       if (prevScrollTop.current - nowScrollTop.current > 0 || scrollTop === 0) {
         if (navEl.current) {
