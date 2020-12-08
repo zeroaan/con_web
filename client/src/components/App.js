@@ -1,8 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 
-import Auth from "hoc/auth";
-
+import AuthRoute from "pages/AuthRoute";
 import Home from "pages/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
@@ -17,14 +16,14 @@ const App = () => {
     <>
       <Router basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route exact path="/" component={Auth(Home, null)} />
-          <Route exact path="/login" component={Auth(Login, false)} />
-          <Route exact path="/register" component={Auth(Register, false)} />
-          <Route exact path="/about" component={Auth(About, null)} />
-          <Route exact path="/history" component={Auth(History, null)} />
-          <Route exact path="/tech" component={Auth(Tech, null)} />
-          <Route exact path="/operation" component={Auth(Operation, true)} />
-          <Route exact path="/member" component={Auth(Members, null)} />
+          <AuthRoute exact path="/" component={Home} />
+          <AuthRoute exact path="/login" component={Login} option={false} />
+          <AuthRoute exact path="/register" component={Register} option={false} />
+          <AuthRoute exact path="/about" component={About} />
+          <AuthRoute exact path="/history" component={History} />
+          <AuthRoute exact path="/tech" component={Tech} />
+          <AuthRoute exact path="/operation" component={Operation} option={true} />
+          <AuthRoute exact path="/member" component={Members} />
         </Switch>
       </Router>
     </>
