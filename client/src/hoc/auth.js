@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { authRequest } from "store/actions/user";
 
 const Auth = (SpecificComponent, option, adminRoute = null) => {
-  const history = useHistory();
   // adminRouth = null : 기본적으로 null값이 들어감. true : admin유저만 들어갈 수 있음.
   // <Route exact path="/" component={Auth(LandingPage, null, null)} />;
 
@@ -15,11 +14,10 @@ const Auth = (SpecificComponent, option, adminRoute = null) => {
   // false : 로그인 한 유저는 출입이 불가능 한 페이지
   // adminRouth : Admin user 출입기능
   function AuthenticationCheck() {
+    const history = useHistory();
     const dispatch = useDispatch();
-
     useEffect(() => {
       dispatch(authRequest(option, adminRoute, history));
-
       // eslint-disable-next-line
     }, []);
 

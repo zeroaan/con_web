@@ -63,7 +63,7 @@ function authApi() {
 function* auth(action) {
   const response = yield call(authApi);
   yield put(authUser(response.data));
-  if (response.data.isAuth) {
+  if (!response.data.isAuth) {
     if (action.option) {
       yield call(action.history.push, "/login");
     }
