@@ -30,7 +30,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "npm run build && gh-pages -d build",
     "dev": "concurrently \"npm run start\" \"npm run start --prefix ../\""
   },
   "eslintConfig": {
@@ -51,6 +50,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://zeroaan.github.io/con_web/",
   "proxy": "http://127.0.0.1:8080"
 }
