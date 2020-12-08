@@ -2,7 +2,7 @@
 
 const express = require("express");
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 const bodyparser = require("body-parser"); // client에서 보낸 정보를 분석해서 가져올 수 있게 함
 const mongoose = require("mongoose");
 const { User } = require("./models/User"); // User.js DB 가져옴
@@ -35,8 +35,6 @@ mongoose
   })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
-
-app.get("/", (req, res) => res.send("안녕하세요"));
 
 app.get("/api/hello", (req, res) => {
   res.send("backend api/hello response ~");
@@ -115,5 +113,13 @@ app.get("/api/users/logout", auth, (req, res) => {
     });
   });
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+  });
+}
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
