@@ -10,39 +10,33 @@ const DivScreen = styled.div`
   height: 100vh;
   background: center/cover no-repeat url(${SCREEN});
 `;
+const DivHome = styled.div`
+  max-width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+const H1HomeTitle = styled.h1`
+  color: white;
+  font-size: 50px;
+`;
+const PHomeSubTitle = styled.p`
+  color: white;
+  font-size: 20px;
+`;
+
 const Home = () => {
   return (
     <>
       <DivScreen>
         <Navbar color="white" home />
-        <div
-          style={{
-            maxWidth: "100vw",
-            height: "100vh",
-            backgroundColor: "rgba(0,0,0,0.6)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <h1
-            style={{
-              color: "white",
-              fontSize: "50px",
-            }}
-          >
-            Robotics in Logistics
-          </h1>
-          <p
-            style={{
-              color: "white",
-              fontSize: "20px",
-            }}
-          >
-            We're creating solutions for the future
-          </p>
-        </div>
+        <DivHome>
+          <H1HomeTitle>Robotics in Logistics</H1HomeTitle>
+          <PHomeSubTitle>We're creating solutions for the future</PHomeSubTitle>
+        </DivHome>
       </DivScreen>
     </>
   );
