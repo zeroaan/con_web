@@ -12,18 +12,56 @@ const DivStyled = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const H1Title = styled.h1`
-  margin-bottom: 30px;
+const DivAbout = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 1050px;
+  text-align: center;
+  margin: 80px 0 130px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+`;
+const DivCon = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const DivImgBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: rgb(60, 173, 212);
+  margin: 30px 0;
+`;
+const ImgAbout = styled.img`
+  width: 90px;
+`;
+const H2ConTitle = styled.h2`
   font-family: "Nunito", sans-serif;
+  font-size: 24px;
+`;
+const PConDesc = styled.p`
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+  margin: 20px 0 120px 0;
+  width: 250px;
+`;
+const H1Title = styled.h1`
+  font-family: "Nunito", sans-serif;
+  font-size: 32px;
+  margin-bottom: 30px;
 `;
 const PContent = styled.p`
+  font-family: "Nunito", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
   margin-left: 15px;
   margin-bottom: 30px;
   width: 900px;
-  font-size: 17px;
-  font-family: "Nunito", sans-serif;
-  letter-spacing: 0.5px;
-  word-spacing: 3px;
 `;
 const ImgAboutGif = styled.img`
   margin-top: 80px;
@@ -34,114 +72,29 @@ const AboutContent = () => {
   return (
     <>
       <DivStyled>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-            width: "1050px",
-            textAlign: "center",
-            margin: "80px 0 130px 0",
-            borderBottom: "1px solid rgba(0,0,0,0.3)",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "130px",
-                height: "130px",
-                borderRadius: "50%",
-                backgroundColor: "rgb(60, 173, 212)",
-                margin: "30px 0",
-              }}
-            >
-              <img style={{ width: "90px" }} src={ROBOT} alt="ROBOT" />
-            </div>
-            <h2 style={{ fontFamily: `"Nunito", sans-serif` }}>Robot</h2>
-            <p
-              style={{
-                margin: "30px 0 120px 0",
-                width: "250px",
-                fontFamily: `"Nunito", sans-serif`,
-              }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "130px",
-                height: "130px",
-                borderRadius: "50%",
-                backgroundColor: "rgb(60, 173, 212)",
-                margin: "30px 0",
-              }}
-            >
-              <img style={{ width: "90px" }} src={WAREHOUSE} alt="WAREHOUSE" />
-            </div>
-            <h2 style={{ fontFamily: `"Nunito", sans-serif` }}>Warehouse</h2>
-            <p
-              style={{
-                margin: "30px 0 120px 0",
-                width: "250px",
-                fontFamily: `"Nunito", sans-serif`,
-              }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "130px",
-                height: "130px",
-                borderRadius: "50%",
-                backgroundColor: "rgb(60, 173, 212)",
-                margin: "30px 0",
-              }}
-            >
-              <img style={{ width: "90px" }} src={SENSOR} alt="SENSOR" />
-            </div>
-            <h2 style={{ fontFamily: `"Nunito", sans-serif` }}>Sensor</h2>
-            <p
-              style={{
-                margin: "30px 0 120px 0",
-                width: "250px",
-                fontFamily: `"Nunito", sans-serif`,
-              }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </div>
+        <DivAbout>
+          <DivCon>
+            <DivImgBox>
+              <ImgAbout src={ROBOT} alt="ROBOT" />
+            </DivImgBox>
+            <H2ConTitle>Robot</H2ConTitle>
+            <PConDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</PConDesc>
+          </DivCon>
+          <DivCon>
+            <DivImgBox>
+              <ImgAbout src={WAREHOUSE} alt="WAREHOUSE" />
+            </DivImgBox>
+            <H2ConTitle>Warehouse</H2ConTitle>
+            <PConDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</PConDesc>
+          </DivCon>
+          <DivCon>
+            <DivImgBox>
+              <ImgAbout src={SENSOR} alt="SENSOR" />
+            </DivImgBox>
+            <H2ConTitle>Sensor</H2ConTitle>
+            <PConDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</PConDesc>
+          </DivCon>
+        </DivAbout>
         <H1Title>Con ?</H1Title>
         <PContent>
           We are creating solutions for the future of automated logistics warehouse. Our product is
