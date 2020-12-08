@@ -1,10 +1,11 @@
-import { applyMiddleware, compose, createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import createSaga from "redux-saga";
-import saga from "store/sagas";
-import Reducer from "store/reducers";
-
+import { composeWithDevTools } from "redux-devtools-extension";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+
+import saga from "store/sagas";
+import Reducer from "store/reducers";
 
 const persistConfig = {
   key: "root",
@@ -17,10 +18,7 @@ const sagaMiddleWare = createSaga();
 
 export const store = createStore(
   enhancedReducer,
-  compose(
-    applyMiddleware(sagaMiddleWare),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  composeWithDevTools(applyMiddleware(sagaMiddleWare))
 );
 
 export const persistor = persistStore(store);
