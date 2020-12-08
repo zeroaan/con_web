@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ROBOT from "assets/about/robot.png";
 import WAREHOUSE from "assets/about/warehouse.png";
 import SENSOR from "assets/about/sensor.png";
-// import ABOUTGIF from "assets/about/aboutGif.gif";
+import ABOUTGIF from "assets/about/aboutGif.gif";
 
 const DivStyled = styled.div`
   display: flex;
@@ -111,7 +111,7 @@ const AboutContent = () => {
           are hiring passionate talent to disrupt the logistics industry. If you want to dive into
           deep-tech, then Con, co. is a best place for you.
         </PContent>
-        <ImgAboutGif src={ROBOT} alt="ABOUTGIF" />
+        <ImgAboutGif src={ABOUTGIF} alt="ABOUTGIF" />
       </DivStyled>
     </>
   );
