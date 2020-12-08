@@ -11,7 +11,7 @@ import LoginButton from "components/LoginButton";
 import Operation from "pages/Operation";
 
 const DivNav = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -23,6 +23,7 @@ const DivNav = styled.div`
   font-family: "Nunito", sans-serif;
   padding: 0 9vw;
   z-index: 1;
+  transition: all 0.5s ease;
 `;
 const ImgLogo = styled.img`
   margin-top: 5px;
@@ -59,14 +60,27 @@ const Navbar = ({ color, home }) => {
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
       const scrollTop = ("scroll", e.target.scrollingElement.scrollTop);
-      nowScrollTop.current = scrollTop;
-      if (prevScrollTop.current - nowScrollTop.current > 0) {
+
+      // scroll 를 어느정도 내리면 navbar와 content가 겹쳐 보이지 않도록 배경색을 조정
+      if (scrollTop > 450) {
         if (navEl.current) {
-          navEl.current.style.position = "fixed";
+          navEl.current.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
         }
       } else {
         if (navEl.current) {
-          navEl.current.style.position = "absolute";
+          navEl.current.style.backgroundColor = "rgba(255, 255, 255, 0)";
+        }
+      }
+
+      // scrool을 올릴 땐 navbar가 보이고, scroll을 내릴 땐 navbar을 안 보이게 함
+      nowScrollTop.current = scrollTop;
+      if (prevScrollTop.current - nowScrollTop.current > 0 || scrollTop === 0) {
+        if (navEl.current) {
+          navEl.current.style.top = "0";
+        }
+      } else {
+        if (navEl.current) {
+          navEl.current.style.top = "-60px";
         }
       }
       prevScrollTop.current = nowScrollTop.current;
