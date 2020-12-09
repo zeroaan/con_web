@@ -14,7 +14,7 @@ import Members from "pages/Members";
 const App = () => {
   return (
     <>
-      <Router basename="https://con-web.herokuapp.com">
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <AuthRoute exact path="/" component={Home} />
           <AuthRoute exact path="/login" component={Login} option={false} />
