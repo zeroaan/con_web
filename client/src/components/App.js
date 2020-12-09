@@ -14,7 +14,7 @@ import Members from "pages/Members";
 const App = () => {
   return (
     <>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <Switch>
           <AuthRoute exact path="/" component={Home} />
           <AuthRoute exact path="/login" component={Login} option={false} />
