@@ -7,7 +7,10 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Con Project using react" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <meta http-equiv="Content-Security-Policy" content="default-src *; img-src 'self';" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src * 'unsafe-inline'; img-src 'self'; style-src 'self'; script-src 'self';"
+    />
 
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
