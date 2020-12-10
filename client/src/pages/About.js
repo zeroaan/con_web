@@ -9,10 +9,7 @@ const About = () => {
   return (
     <>
       <Navbar />
-      <AboutTitle
-        title="About Con."
-        subTitle="We're creating solutions for the future of automated logistics warehouse."
-      />
+      <AboutTitle title="ABOUT" />
       <AboutContent />
       <Footer />
     </>

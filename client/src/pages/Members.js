@@ -102,10 +102,7 @@ const Members = () => {
   return (
     <>
       <Navbar />
-      <AboutTitle
-        title="Member"
-        subTitle="We're creating solutions for the future of automated logistics warehouse."
-      />
+      <AboutTitle title="MEMBER" />
       <DivCon>
         <DivTeamTitle>
           <MemoryIcon className={classes.teamIcon} />

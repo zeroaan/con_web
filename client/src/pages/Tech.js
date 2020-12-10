@@ -60,10 +60,7 @@ const Tech = () => {
   return (
     <>
       <Navbar />
-      <AboutTitle
-        title="Technology"
-        subTitle="We're creating solutions for the future of automated logistics warehouse."
-      />
+      <AboutTitle title="TECHNOLOGY" />
       <DivTechUp>
         <H1Tech>Tech Stack</H1Tech>
         <DivTechImgBox>

@@ -47,7 +47,7 @@ const PConDesc = styled.p`
   font-family: "Nunito", sans-serif;
   font-size: 15px;
   margin: 20px 0 120px 0;
-  width: 250px;
+  width: 170px;
 `;
 const H1Title = styled.h1`
   font-family: "Nunito", sans-serif;
@@ -78,21 +78,21 @@ const AboutContent = () => {
               <ImgAbout src={ROBOT} alt="ROBOT" />
             </DivImgBox>
             <H2ConTitle>Robot</H2ConTitle>
-            <PConDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</PConDesc>
+            <PConDesc>Automated Delivery, Hand to Hand</PConDesc>
           </DivCon>
           <DivCon>
             <DivImgBox>
               <ImgAbout src={DELIVERY} alt="DELIVERY" />
             </DivImgBox>
             <H2ConTitle>Delivery</H2ConTitle>
-            <PConDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</PConDesc>
+            <PConDesc>Deliverying to customer, Safely and Warmly</PConDesc>
           </DivCon>
           <DivCon>
             <DivImgBox>
               <ImgAbout src={SENSOR} alt="SENSOR" />
             </DivImgBox>
             <H2ConTitle>Sensor</H2ConTitle>
-            <PConDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</PConDesc>
+            <PConDesc>Lidar sensor for Autonomous driving</PConDesc>
           </DivCon>
         </DivAbout>
         <H1Title>Con ?</H1Title>

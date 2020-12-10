@@ -16,19 +16,15 @@ const DivStyled = styled.div`
 const H1Title = styled.h1`
   font-family: "Nunito", sans-serif;
   font-weight: 300;
-  font-size: 72px;
-`;
-const H3SubTitle = styled.h3`
-  font-family: "Nunito", sans-serif;
-  font-weight: 300;
+  font-size: 60px;
+  margin-bottom: 30px;
 `;
 
-const AboutTitle = ({ title, subTitle }) => {
+const AboutTitle = ({ title }) => {
   return (
     <>
       <DivStyled>
         <H1Title>{title}</H1Title>
-        <H3SubTitle>{subTitle}</H3SubTitle>
       </DivStyled>
     </>
   );

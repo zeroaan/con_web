@@ -8,10 +8,7 @@ const History = () => {
   return (
     <>
       <Navbar />
-      <AboutTitle
-        title="History"
-        subTitle="We're creating solutions for the future of automated logistics warehouse."
-      />
+      <AboutTitle title="HISTORY" />
       <div>history</div>
       <Footer />
     </>

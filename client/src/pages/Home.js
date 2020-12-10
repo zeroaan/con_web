@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import SCREEN from "assets/screen2.png";
+import SCREEN from "assets/screen.png";
 
 import Navbar from "components/Navbar";
 
 const DivScreen = styled.div`
   max-width: 100vw;
   height: 100vh;
-  background: center/cover no-repeat
-    url(https://www.roboticsbusinessreview.com/wp-content/uploads/2018/08/0160_Starship_Robot_Delivery_Launch_Event_Monkston_Park_Milton_Keynes_April_2018.jpg);
+  background: center/cover no-repeat url(${SCREEN});
 `;
 const DivHome = styled.div`
   max-width: 100vw;
@@ -19,6 +18,7 @@ const DivHome = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 50px;
 `;
 const H1HomeTitle = styled.h1`
   color: white;
@@ -35,7 +35,7 @@ const Home = () => {
       <DivScreen>
         <Navbar color="white" home />
         <DivHome>
-          <H1HomeTitle>Robotics in Logistics</H1HomeTitle>
+          <H1HomeTitle>Robotics for Delivery service</H1HomeTitle>
           <PHomeSubTitle>We're creating solutions for the future</PHomeSubTitle>
         </DivHome>
       </DivScreen>
