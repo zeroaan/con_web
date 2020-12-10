@@ -9,7 +9,7 @@ const DivScreen = styled.div`
   max-width: 100vw;
   height: 100vh;
   background: center/cover no-repeat
-    url(https://miro.medium.com/max/831/1*raqXpexV5aUsR4kaEJUd6A.jpeg);
+    url(https://www.roboticsbusinessreview.com/wp-content/uploads/2018/08/0160_Starship_Robot_Delivery_Launch_Event_Monkston_Park_Milton_Keynes_April_2018.jpg);
 `;
 const DivHome = styled.div`
   max-width: 100vw;
