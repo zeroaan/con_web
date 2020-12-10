@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import ROBOT from "assets/about/robot.png";
-import WAREHOUSE from "assets/about/warehouse.png";
+import DELIVERY from "assets/about/delivery.png";
 import SENSOR from "assets/about/sensor.png";
 import ABOUTGIF from "assets/about/aboutGif.gif";
 
@@ -82,9 +82,9 @@ const AboutContent = () => {
           </DivCon>
           <DivCon>
             <DivImgBox>
-              <ImgAbout src={WAREHOUSE} alt="WAREHOUSE" />
+              <ImgAbout src={DELIVERY} alt="DELIVERY" />
             </DivImgBox>
-            <H2ConTitle>Warehouse</H2ConTitle>
+            <H2ConTitle>Delivery</H2ConTitle>
             <PConDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</PConDesc>
           </DivCon>
           <DivCon>
@@ -97,19 +97,17 @@ const AboutContent = () => {
         </DivAbout>
         <H1Title>Con ?</H1Title>
         <PContent>
-          We are creating solutions for the future of automated logistics warehouse. Our product is
-          an AI-driven autonomous robot using LiDAR that helps with the running and carrying roles
-          in a warehouse.
+          We are creating solutions for the future of delivery service. Our product is an AI-driven
+          autonomous robot using LiDAR that helps with the running and carrying foods for customers.
         </PContent>
         <PContent>
-          This is a big help to warehouse employees, who encounter a lot of physically demanding
-          work. A logistics warehouse is a place to enjoy customers and seller. We are here to make
-          the warehouse a better and safer place to work using robotics and AI.
+          This is a big help to shop owner who cost a lot of money for delivery service. Demanding
+          of delivery service grows year by year, especially during covid-19 pandemic. We want to
+          enable robots to join our society as a key assistant to restaurant workers and customers.
         </PContent>
         <PContent>
-          We want to enable robots to join in logistics industry as a key assistant to warehouse. We
-          are hiring passionate talent to disrupt the logistics industry. If you want to dive into
-          deep-tech, then Con, co. is a best place for you.
+          We are hiring passionate talent to disrupt the delivery service industry. If you want to
+          dive into deep-tech, then Con, co. is a best place for you.
         </PContent>
         <ImgAboutGif src={ABOUTGIF} alt="ABOUTGIF" />
       </DivStyled>

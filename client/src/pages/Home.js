@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-import SCREEN from "assets/screen.png";
+import SCREEN from "assets/screen2.png";
 
 import Navbar from "components/Navbar";
 
 const DivScreen = styled.div`
   max-width: 100vw;
   height: 100vh;
-  background: center/cover no-repeat url(${SCREEN});
+  background: center/cover no-repeat
+    url(https://miro.medium.com/max/831/1*raqXpexV5aUsR4kaEJUd6A.jpeg);
 `;
 const DivHome = styled.div`
   max-width: 100vw;
