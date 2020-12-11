@@ -66,7 +66,7 @@ const Navbar = ({ color, home }) => {
       const scrollTop = ("scroll", e.target.scrollingElement.scrollTop);
 
       // scroll 를 어느정도 내리면 navbar와 content가 겹쳐 보이지 않도록 배경색을 조정
-      if (scrollTop > 450) {
+      if (scrollTop > 420) {
         if (navEl.current) {
           navEl.current.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
         }
