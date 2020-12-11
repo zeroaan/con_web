@@ -55,7 +55,9 @@ const MemberContent = ({ img, name, desc, git }) => {
         <PName>{name}</PName>
         <DivDesc>
           <PDesc>
-            <p></p>
+            <p>{desc.a}</p>
+            <p>{desc.b}</p>
+            <p style={{ marginTop: "20px" }}>"{desc.c}"</p>
           </PDesc>
           <AGit href={git} target="_blank">
             <GitHubIcon className={classes.gitIcon} />

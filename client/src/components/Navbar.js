@@ -35,11 +35,12 @@ const DivNavMenu = styled.div`
   margin-left: 3vw;
   a {
     text-align: center;
-    margin: 0 1.2vw;
-    padding: 0 0.8vw;
-    height: 40px;
+    margin: 0 0.5vw;
+    padding: 0 0.5vw;
+    width: 100px;
+    height: 45px;
     font-size: 18px;
-    line-height: 40px;
+    line-height: 45px;
     user-select: none;
     text-decoration: none;
     color: ${(props) => props.color || "white"};
