@@ -89,6 +89,10 @@ const Navbar = ({ color, home }) => {
       }
       prevScrollTop.current = nowScrollTop.current;
     });
+
+    return () => {
+      window.scrollTo(0, 0);
+    };
   }, []);
 
   const location = useLocation();
