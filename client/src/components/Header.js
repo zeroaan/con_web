@@ -20,7 +20,7 @@ const H1Title = styled.h1`
   letter-spacing: 5px;
 `;
 
-const AboutTitle = ({ title, backImg }) => {
+const Header = ({ title, backImg }) => {
   return (
     <>
       <DivStyled backImg={backImg}>
@@ -32,4 +32,4 @@ const AboutTitle = ({ title, backImg }) => {
   );
 };
 
-export default AboutTitle;
+export default Header;

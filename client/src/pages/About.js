@@ -1,23 +1,15 @@
 import React from "react";
 
-import Navbar from "components/Navbar";
-import AboutTitle from "components/AboutTitle";
-import AboutContent from "components/AboutContent";
-import Footer from "components/Footer";
+import BACKIMG from "assets/header/about.png";
 
-// import BACKIMG from
+import Layout from "components/Layout";
+import AboutContent from "components/AboutContent";
 
 const About = () => {
   return (
-    <>
-      <Navbar />
-      <AboutTitle
-        title="ABOUT"
-        backImg="https://miro.medium.com/max/2622/1*xVmsxyHmBxYLmL2_kUx27A.jpeg"
-      />
+    <Layout title="ABOUT" backImg={BACKIMG}>
       <AboutContent />
-      <Footer />
-    </>
+    </Layout>
   );
 };
 

@@ -1,20 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import ROS from "assets/tech/ros.png";
-import RASP from "assets/tech/rasp.png";
-import ARDU from "assets/tech/ardu.png";
-import CPP from "assets/tech/cpp.png";
-import MONGO from "assets/tech/mongo.png";
-import EXPRESS from "assets/tech/express.png";
-import REACT from "assets/tech/react.png";
-import NODEJS from "assets/tech/nodejs.png";
+import BACKIMG from "assets/header/tech.png";
 import TECHLOGIC from "assets/tech/techLogic.png";
 
-import Navbar from "components/Navbar";
-import AboutTitle from "components/AboutTitle";
+import Layout from "components/Layout";
 import TechImg from "components/TechImg";
-import Footer from "components/Footer";
+
+import { techImg } from "data/TechData";
 
 const DivTech = styled.div`
   margin: auto;
@@ -46,24 +39,8 @@ const ImgTechLogic = styled.img`
 `;
 
 const Tech = () => {
-  const techImg = [
-    { name: "Ros", src: `${ROS}` },
-    { name: "Raspberry Pi", src: `${RASP}` },
-    { name: "Arduino", src: `${ARDU}` },
-    { name: "C++", src: `${CPP}` },
-    { name: "Mongo DB", src: `${MONGO}` },
-    { name: "Express JS", src: `${EXPRESS}` },
-    { name: "React", src: `${REACT}` },
-    { name: "Node JS", src: `${NODEJS}` },
-  ];
-
   return (
-    <>
-      <Navbar />
-      <AboutTitle
-        title="TECHNOLOGY"
-        backImg="https://files.slack.com/files-pri/T01EVG416UQ-F01GKNH71J9/large_fx_vwcvfhxy-rgzl64ompc6qu8xg2wob7-6reemewsu.jpg"
-      />
+    <Layout title="TECHNOLOGY" backImg={BACKIMG}>
       <DivTechUp>
         <H1Tech>Tech Stack</H1Tech>
         <DivTechImgBox>
@@ -76,8 +53,7 @@ const Tech = () => {
         <H1Tech>Tech Logic</H1Tech>
         <ImgTechLogic src={TECHLOGIC} alt="TECHLOGIC" />
       </DivTech>
-      <Footer />
-    </>
+    </Layout>
   );
 };
 

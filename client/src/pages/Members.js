@@ -5,16 +5,12 @@ import MemoryIcon from "@material-ui/icons/Memory";
 import LanguageIcon from "@material-ui/icons/Language";
 import { makeStyles } from "@material-ui/core/styles";
 
-import FRODO from "assets/member/frodo.png";
-import CON from "assets/member/con1.png";
-import MUZI from "assets/member/muzi.png";
-import RYAN from "assets/member/ryan.png";
-import APEACH from "assets/member/apeach.png";
+import BACKIMG from "assets/header/member.png";
 
-import Navbar from "components/Navbar";
-import AboutTitle from "components/AboutTitle";
+import Layout from "components/Layout";
 import MemberContent from "components/MemberContent";
-import Footer from "components/Footer";
+
+import { embededTeam, webTeam } from "data/MemberData";
 
 const DivCon = styled.div`
   display: flex;
@@ -49,68 +45,8 @@ const useStyles = makeStyles({
 const Members = () => {
   const classes = useStyles();
 
-  const embededTeam = [
-    {
-      img: `${FRODO}`,
-      name: "L. Ji Hyoung",
-      desc: {
-        part: "Ros",
-        skill: "React, Node.JS",
-        word: "Introduce your business team in the perfect manner",
-      },
-      git: "https://github.com/",
-    },
-    {
-      img: `${CON}`,
-      name: "B. Sang Jun",
-      desc: {
-        part: "Arduino",
-        skill: "React, Node.JS",
-        word: "Introduce your business team in the perfect manner",
-      },
-      git: "https://github.com/sangjunee",
-    },
-  ];
-  const webTeam = [
-    {
-      img: `${MUZI}`,
-      name: "A. Jin Young",
-      desc: {
-        part: "Front-End",
-        skill: "React, Node.JS, css in JS",
-        word: "Introduce your business team in the perfect manner",
-      },
-      git: "https://github.com/zeroaan",
-    },
-    {
-      img: `${RYAN}`,
-      name: "L. Hyun Jae",
-      desc: {
-        part: "Back-End",
-        skill: "Node.JS, React",
-        word: "Introduce your business team in the perfect manner",
-      },
-      git: "https://github.com/Gappleg",
-    },
-    {
-      img: `${APEACH}`,
-      name: "C. Yu Som",
-      desc: {
-        part: "Front-End",
-        skill: "React, css in JS",
-        word: "Introduce your business team in the perfect manner",
-      },
-      git: "https://github.com/yusom",
-    },
-  ];
-
   return (
-    <>
-      <Navbar />
-      <AboutTitle
-        title="MEMBER"
-        backImg="https://estonianworld.com/wp-content/uploads/2017/01/Starship-in-London-XI.jpg"
-      />
+    <Layout title="MEMBER" backImg={BACKIMG}>
       <DivCon>
         <DivTeamTitle>
           <MemoryIcon className={classes.teamIcon} />
@@ -133,8 +69,7 @@ const Members = () => {
           ))}
         </DivTeam>
       </DivCon>
-      <Footer />
-    </>
+    </Layout>
   );
 };
 
