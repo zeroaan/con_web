@@ -34,7 +34,7 @@ const AGit = styled.a`
 
 const useStyles = makeStyles({
   gitIcon: {
-    margin: "20px 0 0 0",
+    margin: "30px 0 0 0",
     fontSize: "40px",
     color: "rgba(0, 0, 0, 0.8)",
     transition: "all 0.3s ease",
@@ -55,9 +55,9 @@ const MemberContent = ({ img, name, desc, git }) => {
         <PName>{name}</PName>
         <DivDesc>
           <PDesc>
-            <p>{desc.a}</p>
-            <p>{desc.b}</p>
-            <p style={{ marginTop: "20px" }}>"{desc.c}"</p>
+            <p>{desc.part}</p>
+            <p>{desc.skill}</p>
+            <p style={{ marginTop: "20px" }}>"{desc.word}"</p>
           </PDesc>
           <AGit href={git} target="_blank">
             <GitHubIcon className={classes.gitIcon} />
