@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <>
       <DivScreen>
-        <Navbar color="white" home />
+        <Navbar home />
         <DivHome>
           <H1HomeTitle>Robotics for Delivery service</H1HomeTitle>
           <PHomeSubTitle>We're creating solutions for the future</PHomeSubTitle>

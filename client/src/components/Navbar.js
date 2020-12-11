@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 
-import LOGO from "assets/logo.png";
+// import LOGO from "assets/logo.png";
 import LOGO2 from "assets/logo2.png";
 import RUN from "assets/navbar/run.png";
 
@@ -34,16 +34,19 @@ const DivNavMenu = styled.div`
   display: flex;
   margin-left: 3vw;
   a {
-    padding: 0 2vw;
-    height: 60px;
+    text-align: center;
+    margin: 0 1.2vw;
+    padding: 0 0.8vw;
+    height: 40px;
     font-size: 18px;
-    line-height: 60px;
+    line-height: 40px;
     user-select: none;
     text-decoration: none;
-    color: ${(props) => props.color || "black"};
+    color: ${(props) => props.color || "white"};
+    transition: all 0.3s ease;
   }
   a:hover {
-    border-bottom: 5px solid ${(props) => (props.home ? "none" : "rgb(39, 132, 255)")};
+    border-bottom: 5px solid ${(props) => (props.home ? "none" : "rgb(255, 255, 255)")};
   }
 `;
 const ButtonOperation = styled(Link)`
@@ -64,11 +67,11 @@ const Navbar = ({ color, home }) => {
       // scroll 를 어느정도 내리면 navbar와 content가 겹쳐 보이지 않도록 배경색을 조정
       if (scrollTop > 450) {
         if (navEl.current) {
-          navEl.current.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
+          navEl.current.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
         }
       } else {
         if (navEl.current) {
-          navEl.current.style.backgroundColor = "rgba(255, 255, 255, 0)";
+          navEl.current.style.backgroundColor = "rgba(0, 0, 0, 0)";
         }
       }
 
@@ -114,7 +117,7 @@ const Navbar = ({ color, home }) => {
     <>
       <DivNav ref={navEl}>
         <Link to="/">
-          <ImgLogo src={home ? LOGO2 : LOGO} alt="LOGO" />
+          <ImgLogo src={LOGO2} alt="LOGO" />
         </Link>
         <DivNavMenu color={color} home={home}>
           <Link to="/about">About</Link>

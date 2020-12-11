@@ -54,7 +54,9 @@ const MemberContent = ({ img, name, desc, git }) => {
         <ImgStyled src={img} alt="FRODO" />
         <PName>{name}</PName>
         <DivDesc>
-          <PDesc>{desc.text}</PDesc>
+          <PDesc>
+            <p></p>
+          </PDesc>
           <AGit href={git} target="_blank">
             <GitHubIcon className={classes.gitIcon} />
           </AGit>

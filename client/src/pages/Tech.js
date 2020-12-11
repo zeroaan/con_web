@@ -60,7 +60,10 @@ const Tech = () => {
   return (
     <>
       <Navbar />
-      <AboutTitle title="TECHNOLOGY" />
+      <AboutTitle
+        title="TECHNOLOGY"
+        backImg="https://files.slack.com/files-pri/T01EVG416UQ-F01GKNH71J9/large_fx_vwcvfhxy-rgzl64ompc6qu8xg2wob7-6reemewsu.jpg"
+      />
       <DivTechUp>
         <H1Tech>Tech Stack</H1Tech>
         <DivTechImgBox>

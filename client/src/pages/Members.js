@@ -54,6 +54,9 @@ const Members = () => {
       img: `${FRODO}`,
       name: "L. Ji Hyoung",
       desc: {
+        a: "Front-end",
+        b: "React, Node.JS",
+        c: "Introduce your business team in the perfect manner",
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
       },
@@ -63,6 +66,9 @@ const Members = () => {
       img: `${CON}`,
       name: "B. Sang Jun",
       desc: {
+        a: "Front-end",
+        b: "React, Node.JS",
+        c: "Introduce your business team in the perfect manner",
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
       },
@@ -74,6 +80,9 @@ const Members = () => {
       img: `${MUZI}`,
       name: "A. Jin Young",
       desc: {
+        a: "Front-end",
+        b: "React, Node.JS",
+        c: "Introduce your business team in the perfect manner",
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
       },
@@ -83,6 +92,9 @@ const Members = () => {
       img: `${RYAN}`,
       name: "L. Hyun Jae",
       desc: {
+        a: "Front-end",
+        b: "React, Node.JS",
+        c: "Introduce your business team in the perfect manner",
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
       },
@@ -92,6 +104,9 @@ const Members = () => {
       img: `${APEACH}`,
       name: "C. Yu Som",
       desc: {
+        a: "Front-end",
+        b: "React, Node.JS",
+        c: "Introduce your business team in the perfect manner",
         text:
           "Introduce your business team in the perfect manner with our make a team introduction presentation about us PowerPoint slide. The presentation design shares the concept.",
       },
@@ -102,7 +117,10 @@ const Members = () => {
   return (
     <>
       <Navbar />
-      <AboutTitle title="MEMBER" />
+      <AboutTitle
+        title="MEMBER"
+        backImg="https://estonianworld.com/wp-content/uploads/2017/01/Starship-in-London-XI.jpg"
+      />
       <DivCon>
         <DivTeamTitle>
           <MemoryIcon className={classes.teamIcon} />

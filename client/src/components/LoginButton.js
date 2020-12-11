@@ -13,7 +13,7 @@ const LinkLogInOutBt = styled(Link)`
   line-height: 60px;
   user-select: none;
   text-decoration: none;
-  color: ${(props) => props.color || "black"};
+  color: ${(props) => props.color || "white"};
 `;
 
 const LoginButton = ({ color }) => {
