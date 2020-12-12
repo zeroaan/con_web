@@ -63,7 +63,7 @@ const MemberContent = ({ img, name, desc, git }) => {
   return (
     <>
       <DivMember>
-        <ImgStyled src={img} alt="FRODO" />
+        <ImgStyled src={img} alt={name} />
         <PName>{name}</PName>
         <DivDesc>
           <PDesc>{desc.part}</PDesc>
