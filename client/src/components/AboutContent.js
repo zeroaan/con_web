@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import ROBOT from "assets/about/robot.png";
-import DELIVERY from "assets/about/delivery.png";
-import SENSOR from "assets/about/sensor.png";
 import ABOUTGIF from "assets/about/aboutGif.gif";
+
+import { aboutIcon, aboutDesc } from "data/AboutData";
 
 const DivStyled = styled.div`
   display: flex;
@@ -73,42 +72,20 @@ const AboutContent = () => {
     <>
       <DivStyled>
         <DivAbout>
-          <DivCon>
-            <DivImgBox>
-              <ImgAbout src={ROBOT} alt="ROBOT" />
-            </DivImgBox>
-            <H2ConTitle>Robot</H2ConTitle>
-            <PConDesc>Automated Delivery, Hand to Hand</PConDesc>
-          </DivCon>
-          <DivCon>
-            <DivImgBox>
-              <ImgAbout src={DELIVERY} alt="DELIVERY" />
-            </DivImgBox>
-            <H2ConTitle>Delivery</H2ConTitle>
-            <PConDesc>Deliverying to customer, Safely and Warmly</PConDesc>
-          </DivCon>
-          <DivCon>
-            <DivImgBox>
-              <ImgAbout src={SENSOR} alt="SENSOR" />
-            </DivImgBox>
-            <H2ConTitle>Sensor</H2ConTitle>
-            <PConDesc>Lidar sensor for Autonomous driving</PConDesc>
-          </DivCon>
+          {aboutIcon.map((v) => (
+            <DivCon key={v.title}>
+              <DivImgBox>
+                <ImgAbout src={v.img} alt={v.title} />
+              </DivImgBox>
+              <H2ConTitle>{v.title}</H2ConTitle>
+              <PConDesc>{v.desc}</PConDesc>
+            </DivCon>
+          ))}
         </DivAbout>
         <H1Title>Con ?</H1Title>
-        <PContent>
-          We are creating solutions for the future of delivery service. Our product is an AI-driven
-          autonomous robot using LiDAR that helps with the running and carrying foods for customers.
-        </PContent>
-        <PContent>
-          This is a big help to shop owner who cost a lot of money for delivery service. Demanding
-          of delivery service grows year by year, especially during covid-19 pandemic. We want to
-          enable robots to join our society as a key assistant to restaurant workers and customers.
-        </PContent>
-        <PContent>
-          We are hiring passionate talent to disrupt the delivery service industry. If you want to
-          dive into deep-tech, then Con, co. is a best place for you.
-        </PContent>
+        {aboutDesc.map((desc, i) => (
+          <PContent key={i}>{desc}</PContent>
+        ))}
         <ImgAboutGif src={ABOUTGIF} alt="ABOUTGIF" />
       </DivStyled>
     </>
