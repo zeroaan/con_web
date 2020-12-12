@@ -69,8 +69,8 @@ const MemberContent = ({ img, name, desc, git }) => {
           <PDesc>{desc.part}</PDesc>
           <PDesc>{desc.skill}</PDesc>
           <DivWord>
-            {desc.word.map((v) => (
-              <PDesc>{v}</PDesc>
+            {desc.word.map((v, i) => (
+              <PDesc key={i}>{v}</PDesc>
             ))}
           </DivWord>
           <AGit href={git} target="_blank">
