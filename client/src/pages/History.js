@@ -2,7 +2,7 @@ import React from "react";
 
 import BACKIMG from "assets/header/history.png";
 
-import Layout from "components/Layout";
+import Layout from "components/Layout/Layout";
 
 const History = () => {
   return (

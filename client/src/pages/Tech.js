@@ -4,10 +4,10 @@ import styled from "styled-components";
 import BACKIMG from "assets/header/tech.png";
 import TECHLOGIC from "assets/tech/techLogic.png";
 
-import Layout from "components/Layout";
-import TechImg from "components/TechImg";
+import Layout from "components/Layout/Layout";
+import TechImg from "components/Tech/TechImg";
 
-import { techImg } from "data/TechData";
+import { techImg } from "data/Tech/TechData";
 
 const DivTech = styled.div`
   margin: auto;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import SCREEN from "assets/screen.png";
 
-import Navbar from "components/Navbar";
+import Navbar from "components/Navbar/Navbar";
 
 const DivScreen = styled.div`
   max-width: 100vw;

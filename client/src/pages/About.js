@@ -2,8 +2,8 @@ import React from "react";
 
 import BACKIMG from "assets/header/about.png";
 
-import Layout from "components/Layout";
-import AboutContent from "components/AboutContent";
+import Layout from "components/Layout/Layout";
+import AboutContent from "components/About/AboutContent";
 
 const About = () => {
   return (

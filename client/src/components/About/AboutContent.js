@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import ABOUTGIF from "assets/about/aboutGif.gif";
 
-import { aboutIcon, aboutDesc } from "data/AboutData";
+import { aboutIcon, aboutDesc } from "data/About/AboutData";
 
 const DivStyled = styled.div`
   display: flex;

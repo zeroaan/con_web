@@ -7,7 +7,7 @@ import styled from "styled-components";
 import LOGO2 from "assets/logo2.png";
 import RUN from "assets/navbar/run.png";
 
-import LoginButton from "components/LoginButton";
+import LoginButton from "components/Navbar/LoginButton";
 import Operation from "pages/Operation";
 
 const DivNav = styled.div`

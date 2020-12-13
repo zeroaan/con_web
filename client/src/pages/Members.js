@@ -7,10 +7,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import BACKIMG from "assets/header/member.png";
 
-import Layout from "components/Layout";
-import MemberContent from "components/MemberContent";
+import Layout from "components/Layout/Layout";
+import MemberContent from "components/Member/MemberContent";
 
-import { embededTeam, webTeam } from "data/MemberData";
+import { embededTeam, webTeam } from "data/Member/MemberData";
 
 const DivCon = styled.div`
   display: flex;
