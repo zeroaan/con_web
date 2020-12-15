@@ -44,11 +44,7 @@ export const webTeam = [
     desc: {
       part: "Back-End",
       skill: "Node.js, Express, React",
-      word: [
-        "“ Don’t worry if it doesn’t work right.",
-        "If everything did, you’d be out of a job. ”",
-        "- Eric S. Raymond -",
-      ],
+      word: ["“ Write Less, Do more.”", "- Rich Harris -"],
     },
     git: "https://github.com/Gappleg",
   },
