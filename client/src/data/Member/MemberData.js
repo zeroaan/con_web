@@ -11,7 +11,7 @@ export const embededTeam = [
     desc: {
       part: "H/W control (Sensor)",
       skill: "ROS, C++",
-      word: ["“ Introduce your business team in the perfect manner ”"],
+      word: ["“ Do you know R.O.S? ”", "- Sarang hye yo yeon-yega jung-gye -"],
     },
     git: "https://github.com/Namuly",
   },
@@ -44,7 +44,7 @@ export const webTeam = [
     desc: {
       part: "Back-End",
       skill: "Node.js, Express, React",
-      word: ["“ Write Less, Do more.”", "- Rich Harris -"],
+      word: ["“ Write Less, Do more. ”", "- Rich Harris -"],
     },
     git: "https://github.com/Gappleg",
   },
@@ -54,7 +54,7 @@ export const webTeam = [
     desc: {
       part: "Front-End",
       skill: "React, CSS in JS",
-      word: ["“ Introduce your business team in the perfect manner ”"],
+      word: ["“ Love yourself  ”"],
     },
     git: "https://github.com/yusom",
   },
