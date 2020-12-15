@@ -23,7 +23,7 @@ const DivTechUp = styled(DivTech)`
 `;
 const H1Tech = styled.h1`
   font-family: "Nunito", sans-serif;
-  margin: 120px 0 50px 0;
+  margin: 120px 0 100px 0;
 `;
 const DivTechImgBox = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ const DivTechImgBox = styled.div`
   margin-bottom: 100px;
 `;
 const ImgTechLogic = styled.img`
-  width: 950px;
+  width: 1000px;
 `;
 
 const Tech = () => {
