@@ -1,7 +1,7 @@
 export const historyImg = [
   [
-    "https://files.slack.com/files-pri/T01EVG416UQ-F01HCQAK6TB/h01.png",
-    "https://files.slack.com/files-pri/T01EVG416UQ-F01GX36NWS1/h02.png",
+    "https://user-images.githubusercontent.com/48481448/102312431-0d9c2e80-3fb2-11eb-90c6-3b4b8bfa3888.png",
+    "https://user-images.githubusercontent.com/48481448/102312411-02e19980-3fb2-11eb-9770-daad72bd740d.png",
     "https://files.slack.com/files-pri/T01EVG416UQ-F01H05SHWEN/h03.png",
     "https://files.slack.com/files-pri/T01EVG416UQ-F01HQ14PMBJ/h04.png",
   ],
