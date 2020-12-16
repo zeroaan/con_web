@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
+import HistoryImg from "components/History/HistoryImg";
+
 const DivHistoryRow = styled.div`
   display: grid;
   align-content: space-between;
   gap: 1.5rem;
-`;
-const ImgHistory = styled.img`
-  max-width: 100%;
-  max-height: 100%;
 `;
 
 const HistoryContent = ({ rowImg, index }) => {
@@ -16,7 +14,7 @@ const HistoryContent = ({ rowImg, index }) => {
     <>
       <DivHistoryRow>
         {rowImg.map((v, i) => (
-          <ImgHistory key={i} src={v} alt={`HISTORY${index}${i}`} />
+          <HistoryImg key={i} src={v} alt={`HISTORY${index}${i}`} />
         ))}
       </DivHistoryRow>
     </>
