@@ -2,32 +2,34 @@ import React from "react";
 import styled from "styled-components";
 
 import BACKIMG from "assets/header/history.png";
-import HISTORY from "assets/history/history.png";
 
 import Layout from "components/Layout/Layout";
+import HistoryContent from "components/History/HistoryContent";
 
-const DivHistory = styled.div`
+import { historyImg } from "data/History/HistoryData";
+
+const DivContainer = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  pointer-events: none;
-  user-select: none;
+  margin-top: 130px;
 `;
-const H1History = styled.h1`
-  margin: 100px 0 70px 0;
-`;
-const ImgHistory = styled.img`
-  width: 1100px;
+const DivHistoryCol = styled.div`
+  display: grid;
+  grid-template-columns: 20rem 17rem 22rem 17rem;
+  gap: 1.5rem;
 `;
 
 const History = () => {
   return (
     <Layout title="HISTORY" backImg={BACKIMG}>
-      <DivHistory>
-        <H1History>History</H1History>
-        <ImgHistory src={HISTORY} alt="HISTORY" />
-      </DivHistory>
+      <DivContainer>
+        <DivHistoryCol>
+          {historyImg.map((v, i) => (
+            <HistoryContent key={i} imgData={v} index={i} />
+          ))}
+        </DivHistoryCol>
+      </DivContainer>
     </Layout>
   );
 };
