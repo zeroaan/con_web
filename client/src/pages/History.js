@@ -26,7 +26,7 @@ const History = () => {
       <DivContainer>
         <DivHistoryCol>
           {historyImg.map((v, i) => (
-            <HistoryContent key={i} imgData={v} index={i} />
+            <HistoryContent key={i} rowImg={v} index={i} />
           ))}
         </DivHistoryCol>
       </DivContainer>

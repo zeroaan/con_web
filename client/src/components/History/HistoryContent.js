@@ -11,11 +11,11 @@ const ImgHistory = styled.img`
   max-height: 100%;
 `;
 
-const HistoryContent = ({ imgData, index }) => {
+const HistoryContent = ({ rowImg, index }) => {
   return (
     <>
       <DivHistoryRow>
-        {imgData.map((v, i) => (
+        {rowImg.map((v, i) => (
           <ImgHistory key={i} src={v} alt={`HISTORY${index}${i}`} />
         ))}
       </DivHistoryRow>
