@@ -23,7 +23,7 @@ export const embededTeam = [
       skill: "Arduino, Python",
       word: ["“ One small step for man, one giant leap for mankind. ”", "- Neil Armstrong -"],
     },
-    git: "https://github.com/sangjunee",
+    git: "https://github.com/bandoneon96",
   },
 ];
 
