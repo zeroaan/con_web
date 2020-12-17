@@ -79,20 +79,20 @@ export const historyImg = [
   ],
   [
     {
-      date: "2020 12 04",
-      title: "중간 발표",
+      date: "2020 11 19",
+      title: "자료 조사",
       src:
         "https://user-images.githubusercontent.com/48481448/102312902-e7c35980-3fb2-11eb-8832-75e873583ef2.png",
     },
     {
-      date: "2020 12 10",
-      title: "회의",
+      date: "2020 11 12",
+      title: "디자인 회의",
       src:
         "https://user-images.githubusercontent.com/48481448/102312897-e72ac300-3fb2-11eb-93ee-d8776db19f10.png",
     },
     {
-      date: "2020 12 10",
-      title: "개인 파트",
+      date: "2020 10 30",
+      title: "팀 회식",
       src:
         "https://user-images.githubusercontent.com/48481448/102312879-df6b1e80-3fb2-11eb-8ae9-f143af3206b7.png",
     },
