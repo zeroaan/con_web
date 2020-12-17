@@ -12,7 +12,7 @@ const DivContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 130px;
+  margin-top: 160px;
 `;
 const DivHistoryCol = styled.div`
   display: grid;
