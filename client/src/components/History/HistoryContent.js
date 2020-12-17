@@ -14,7 +14,7 @@ const HistoryContent = ({ rowImg, index }) => {
     <>
       <DivHistoryRow>
         {rowImg.map((v, i) => (
-          <HistoryImg key={i} src={v} alt={`HISTORY${index}${i}`} />
+          <HistoryImg key={i} imgData={v} alt={`HISTORY${index}${i}`} />
         ))}
       </DivHistoryRow>
     </>
