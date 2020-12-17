@@ -31,20 +31,31 @@ const DivHistory = styled.div`
   &:hover {
     opacity: 1;
   }
+  &:hover p {
+    left: 0px;
+  }
+  &:hover div {
+    width: 60%;
+  }
 `;
 const PStyled = styled.p`
   color: white;
   font-size: 18px;
   user-select: none;
   margin: 4px 0;
+  transition: all 0.5s ease;
+  position: relative;
+  left: -50px;
 `;
 const PDesc = styled(PStyled)`
   font-size: 20px;
+  left: 50px;
 `;
 const DivLine = styled.div`
   background-color: white;
-  width: 70%;
+  width: 0%;
   height: 2px;
+  transition: all 0.5s ease;
 `;
 
 const HistoryImg = ({ imgData, alt }) => {
