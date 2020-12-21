@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import BACKIMG from "assets/header/tech.png";
 import TECHLOGIC from "assets/tech/techLogic.png";
+import ROSLOGIC from "assets/tech/rosLogic.png";
 
 import Layout from "components/Layout/Layout";
 import TechImg from "components/Tech/TechImg";
@@ -35,7 +36,12 @@ const DivTechImgBox = styled.div`
   margin-bottom: 100px;
 `;
 const ImgTechLogic = styled.img`
+  width: 900px;
+  margin-bottom: 100px;
+`;
+const ImgRosLogic = styled.img`
   width: 1000px;
+  margin-bottom: 30px;
 `;
 
 const Tech = () => {
@@ -49,9 +55,13 @@ const Tech = () => {
           ))}
         </DivTechImgBox>
       </DivTechUp>
-      <DivTech>
+      <DivTechUp>
         <H1Tech>Tech Logic</H1Tech>
         <ImgTechLogic src={TECHLOGIC} alt="TECHLOGIC" />
+      </DivTechUp>
+      <DivTech>
+        <H1Tech>ROS Logic</H1Tech>
+        <ImgRosLogic src={ROSLOGIC} alt="ROSLOGIC" />
       </DivTech>
     </Layout>
   );
