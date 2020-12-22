@@ -3,7 +3,9 @@
 - https://con-web.herokuapp.com//
 - 기간 : 2020.11 ~ 2020.12
 - 소개 : Kosta Team Project - 자율주행 배달로봇 Web
+
   <br />
+
 - kosta에서 진행한 팀 프로젝트로 Raspberry pi와 Ros 등을 이용하여 만든 로봇에 대한 설명, 사용 기술 그리고 팀 소개로 홈페이지를 만들어 보았다.
 - 또한 우측 상단의 실행 버튼을 통해 로봇의 단순 조작과 Ros를 통한 현재 위치 감지까지 실시간으로 볼 수 있게 하였다.
 - Heroku 를 통해 server와 client 모두 배포 완료 하였다.
@@ -12,7 +14,7 @@
 
 <br />
 
-### React 사용 기술
+## React 사용 기술
 
 - **react-router**: route를 사용하여 Single Page Application를 구현하였다.
 - **react-redux**: User data를 한 곳에서 관리하기 위해 redux를 사용하였다. 각자 다른 컴포넌트에서 user data를 사용 가능하다.
@@ -23,40 +25,43 @@
 
   <br />
 
-### 페이지 설명
+## 페이지 설명
 
 - 페이지는 로그인, 회원가입 페이지를 제외하고 총 4개로 About, Tect, History, Member로 구성되어 있다.
+
   <br />
-- 먼저 About 페이지는 프로젝트의 소개와 프로젝트의 방향에 대해서 기술하였다.
+
+#### - 먼저 About 페이지는 프로젝트의 소개와 프로젝트의 방향에 대해서 기술하였다.
 
 ![about](https://user-images.githubusercontent.com/48481448/102862703-d5df2c00-4474-11eb-972d-2a137ceb990e.png)
 
 <br />
-- Tech 페이지는 프로젝트에서 사용한 기술들과 H/W 와 S/W Logic 그리고 Ros Logic이 있다.
+
+#### - Tech 페이지는 프로젝트에서 사용한 기술들과 H/W 와 S/W Logic 그리고 Ros Logic이 있다.
 
 ![tech](https://user-images.githubusercontent.com/48481448/102862603-b0522280-4474-11eb-8a9e-9cc6737e5400.png)
 
 <br />
 
-- History 페이지에는 프로젝트 회의 날짜, 회의명 그리고 사진으로 구성되어 있다.
+#### - History 페이지에는 프로젝트 회의 날짜, 회의명 그리고 사진으로 구성되어 있다.
 
 ![history](https://user-images.githubusercontent.com/48481448/102863114-7afa0480-4475-11eb-9a3f-5e37d8c4a58f.png))
 
 <br />
 
-- Member 페이지에는 프로젝트 멤버들과 담당 분야, 사용 기술 등을 적었다.
+#### - Member 페이지에는 프로젝트 멤버들과 담당 분야, 사용 기술 등을 적었다.
 
 ![member](https://user-images.githubusercontent.com/48481448/102863175-8cdba780-4475-11eb-82db-002bfbf68810.png)
 
 <br />
 
-### client directory 구조
+## client directory 구조
 
 ![directory](https://user-images.githubusercontent.com/48481448/102853855-7f69f180-4464-11eb-8ab6-454207492e8c.png)
 
 <br />
 
-#### src/assets
+### src/assets
 
 - logo, background image 등 각 페이지에서 사용되는 이미지(png, gif)들이 있다.
 
@@ -64,7 +69,7 @@
 
 <br />
 
-#### src/components
+### src/components
 
 - Navbar, Header, Footer, Layout과 같이 모든 페이지에 사용되는 컴포넌트들과 About, Tech, Histroy, Member과 같은 페이지에서 필요한 컴포넌트들이 있다.
   <br />
@@ -156,13 +161,13 @@ const Navbar = ({ color, home }) => {
 
 <br />
 
-#### src/data
+### src/data
 
 - 각 페이지에서 필요한 데이터(img 또는 text data)가 있다.
 
 <br />
 
-#### src/pages
+### src/pages
 
 - 하나의 페이지로 모두 AuthRoute를 통해 로그인 여부에 따라 페이지 접속이 가능하게 한다.
   <br />
