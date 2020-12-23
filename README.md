@@ -66,7 +66,7 @@
 - Navbar : scroll를 아래로 내릴 시 navbar가 보이지 않음
   <br/>
 
-##### src/components/Navbar/Navbar.js
+#### src/components/Navbar/Navbar.js
 
 ```jsx
 const Navbar = ({ color, home }) => {
@@ -167,11 +167,34 @@ const Navbar = ({ color, home }) => {
 - AuthRoute : component, option, admin 여부를 props로 전달 받아 페이지 접속을 가능하게 한다.
   <br />
 
-##### src/components/App.js
+#### src/pages/Router.js
+
+```jsx
+const Router = () => {
+  return (
+    <>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Switch>
+          <AuthRoute exact path="/" component={Home} />
+          <AuthRoute exact path="/login" component={Login} option={false} />
+          <AuthRoute exact path="/register" component={Register} option={false} />
+          <AuthRoute exact path="/about" component={About} />
+          <AuthRoute exact path="/history" component={History} />
+          <AuthRoute exact path="/tech" component={Tech} />
+          <AuthRoute exact path="/operation" component={Operation} option={true} />
+          <AuthRoute exact path="/member" component={Members} />
+        </Switch>
+      </BrowserRouter>
+    </>
+  );
+};
+
+export default Router;
+```
 
 <br />
 
-##### src/pages/AuthRoute
+#### src/pages/AuthRoute
 
 ```jsx
 import React from "react";
@@ -206,4 +229,166 @@ const AuthRoute = ({ component: Component, option = null, admin = null, ...rest 
 };
 
 export default AuthRoute;
+```
+
+<br />
+<br />
+
+## Redux
+
+- user data를 한 스토어에서 관리하기 위해 사용했으며 로그인, 로그아웃, 회원가입 시 store에 data가 저장된다.
+- 비동기적으로 하기 위해 미들웨어인 saga를 적용하였다.
+  <br />
+
+#### src/store/index.js
+
+```js
+import { applyMiddleware, createStore } from "redux";
+import createSaga from "redux-saga";
+import { composeWithDevTools } from "redux-devtools-extension";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
+import saga from "store/sagas";
+import Reducer from "store/reducers";
+
+const persistConfig = {
+  key: "root",
+  storage,
+};
+
+const enhancedReducer = persistReducer(persistConfig, Reducer);
+
+const sagaMiddleWare = createSaga();
+
+export const store = createStore(
+  enhancedReducer,
+  composeWithDevTools(applyMiddleware(sagaMiddleWare))
+);
+
+export const persistor = persistStore(store);
+
+sagaMiddleWare.run(saga);
+```
+
+  <br />
+
+### Action
+
+#### src/store/actions/types.js
+
+```js
+export const LOGIN_REQUEST = "LOGIN_REQUEST";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAILURE = "LOGIN_FAILURE";
+
+export const LOGOUT_REQUEST = "LOGOUT_REQUEST";
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const LOGOUT_FAILURE = "LOGOUT_FAILURE";
+
+export const REGISTER_REQUEST = "REGISTER_REQUEST";
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_FAILURE = "REGISTER_FAILURE";
+
+export const AUTH_USER = "AUTH_USER";
+```
+
+<br />
+
+### Reducer
+
+- server를 통해 전달받은 데이터들을 store에 저장한다.
+  <br />
+
+#### src/store/reducers/user.js
+
+```js
+const UserReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case LOGIN_SUCCESS:
+      return { ...state, loginData: action.payload };
+    case LOGIN_FAILURE:
+      return { ...state, error: action.error };
+
+    case LOGOUT_SUCCESS:
+      return { ...state, userData: action.payload, loginData: {} };
+    case LOGOUT_FAILURE:
+      return { ...state, error: action.error };
+
+    case REGISTER_SUCCESS:
+      return { ...state, registerData: action.payload };
+    case REGISTER_FAILURE:
+      return { ...state, error: action.error };
+
+    case AUTH_USER:
+      return { ...state, userData: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export default UserReducer;
+```
+
+<br />
+
+### Saga
+
+#### src/store/sagas/user.js
+
+```js
+function loginApi(loginData) {
+  return axios.post("/api/users/login", loginData);
+}
+function logoutApi() {
+  return axios.get("/api/users/logout");
+}
+function registerApi(registerData) {
+  return axios.post("/api/users/register", registerData);
+}
+function authApi() {
+  return axios.get("/api/users/auth");
+}
+```
+
+```js
+function* login(action) {
+  try {
+    const result = yield call(loginApi, action.loginData);
+    yield put(loginSuccess(result.data));
+    if (result.data.loginSuccess) {
+      const result2 = yield call(authApi);
+      yield put(authUser(result2.data));
+      yield call(action.history.push, "/");
+    } else {
+      alert("아이디 또는 비밀번호가 틀립니다.");
+    }
+  } catch (error) {
+    yield put(loginFailure(error.message));
+  }
+}
+
+function* logout() {
+  try {
+    const result = yield call(logoutApi);
+    yield put(logoutSuccess(result.data));
+  } catch (error) {
+    yield put(logoutFailure(error.message));
+  }
+}
+
+function* register(action) {
+  try {
+    const result = yield call(registerApi, action.registerData);
+    yield put(registerSuccess(result.data));
+    if (result.data.success) {
+      yield put(loginRequest(action.registerData, action.history));
+    } else {
+      alert("이미 등록된 이메일입니다.");
+    }
+  } catch (error) {
+    yield put(registerFailure(error.message));
+  }
+}
 ```
