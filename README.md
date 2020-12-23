@@ -1,8 +1,9 @@
 # con_web
 
-- https://con-web.herokuapp.com//
+- con_web: [[바로가기]](https://con-web.herokuapp.com/)
 - 기간 : 2020.11 ~ 2020.12
 - 소개 : Kosta Team Project - 자율주행 배달로봇 Web
+- 사용기술 : react, react-router, redux, redux-saga, axios, styled-components, material-ui, node.js, express, mongoDB
 
   <br />
 
@@ -13,17 +14,6 @@
 ![home](https://user-images.githubusercontent.com/48481448/102854508-02d81280-4466-11eb-8484-8fadbbfc0f17.png)
 
 <br />
-
-## React 사용 기술
-
-- **react-router**: route를 사용하여 Single Page Application를 구현하였다.
-- **react-redux**: User data를 한 곳에서 관리하기 위해 redux를 사용하였다. 각자 다른 컴포넌트에서 user data를 사용 가능하다.
-- **redux-saga**: 동기적으로 실행되는 것을 막기 위해 미들웨어인 saga를 사용하였다. 비동기 요청을 할 때 각자 컴포넌트에서 요청하지 않고 saga에서 모아서 사용하였다.
-- **redux-persist**: 로컬 스토리지를 사용하여 로그인 상태가 유지되도록 하였다.
-- **styled-components**: CSS in JS 를 위해 styled-components 를 사용하였다.
-- **material-ui**: github 아이콘 등 icon 사용을 위해 사용하였다.
-
-  <br />
 
 ## 페이지 설명
 
@@ -74,6 +64,9 @@
 - Navbar, Header, Footer, Layout과 같이 모든 페이지에 사용되는 컴포넌트들과 About, Tech, Histroy, Member과 같은 페이지에서 필요한 컴포넌트들이 있다.
   <br />
 - Navbar : scroll를 아래로 내릴 시 navbar가 보이지 않음
+  <br/>
+
+##### src/components/Navbar/Navbar.js
 
 ```jsx
 const Navbar = ({ color, home }) => {
@@ -172,6 +165,13 @@ const Navbar = ({ color, home }) => {
 - 하나의 페이지로 모두 AuthRoute를 통해 로그인 여부에 따라 페이지 접속이 가능하게 한다.
   <br />
 - AuthRoute : component, option, admin 여부를 props로 전달 받아 페이지 접속을 가능하게 한다.
+  <br />
+
+##### src/components/App.js
+
+<br />
+
+##### src/pages/AuthRoute
 
 ```jsx
 import React from "react";
