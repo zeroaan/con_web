@@ -1,11 +1,12 @@
-# con_web
+# Kosta Team Project - 자율주행 배달로봇 Web
 
-- con_web: [[바로가기]](https://con-web.herokuapp.com/)
-- 기간 : 2020.11 ~ 2020.12
-- 소개 : Kosta Team Project - 자율주행 배달로봇 Web
+- https://con-web.herokuapp.com/
+- 기간 : 2020.11.12 ~ 2020.12
 - 사용기술 : react, react-router, redux, redux-saga, axios, styled-components, material-ui, node.js, express, mongoDB
 
   <br />
+
+## 소개
 
 - kosta에서 진행한 팀 프로젝트로 Raspberry pi와 Ros, Lidar 등을 이용하여 만든 로봇에 대한 설명, 사용 기술 그리고 팀 소개로 홈페이지를 만들어 보았다.
 - 또한 우측 상단의 실행 버튼을 통해 로봇의 단순 조작과 Ros를 통한 현재 위치 감지까지 실시간으로 볼 수 있게 하였다.
