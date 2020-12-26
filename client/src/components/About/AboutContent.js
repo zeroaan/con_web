@@ -1,21 +1,10 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
-import { useScrollFadeIn } from "hooks";
+import styled from "styled-components";
+import { useFadeIn, useScrollFadeIn } from "hooks";
 
 import ABOUTGIF from "assets/about/aboutGif.gif";
 
 import { aboutIcon, aboutDesc } from "data/About/AboutData";
-
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 20%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-`;
 
 const DivStyled = styled.div`
   display: flex;
@@ -36,7 +25,6 @@ const DivCon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${fadeIn} 1s cubic-bezier(0, 0, 0.2, 1);
 `;
 const DivImgBox = styled.div`
   display: flex;
@@ -81,6 +69,11 @@ const ImgAboutGif = styled.img`
 `;
 
 const AboutContent = () => {
+  const fadeIn = {
+    0: useFadeIn("up"),
+    1: useFadeIn("up"),
+    2: useFadeIn("up"),
+  };
   const animationFadeIn = {
     0: useScrollFadeIn(),
     1: useScrollFadeIn(),
@@ -93,7 +86,7 @@ const AboutContent = () => {
       <DivStyled>
         <DivAbout>
           {aboutIcon.map((v, i) => (
-            <DivCon key={v.title}>
+            <DivCon key={v.title} {...fadeIn[i]}>
               <DivImgBox>
                 <ImgAbout src={v.img} alt={v.title} />
               </DivImgBox>
