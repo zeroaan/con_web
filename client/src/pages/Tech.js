@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useScrollFadeIn } from "hooks";
 
 import BACKIMG from "assets/header/tech.png";
 import TECHLOGIC from "assets/tech/techLogic.png";
@@ -45,10 +46,18 @@ const ImgRosLogic = styled.img`
 `;
 
 const Tech = () => {
+  const animationFadeIn = {
+    0: useScrollFadeIn(),
+    1: useScrollFadeIn(),
+    2: useScrollFadeIn(0.05),
+    3: useScrollFadeIn(),
+    4: useScrollFadeIn(0.05),
+  };
+
   return (
     <Layout title="TECHNOLOGY" backImg={BACKIMG}>
       <DivTechUp>
-        <H1Tech>Tech Stack</H1Tech>
+        <H1Tech {...animationFadeIn[0]}>Tech Stack</H1Tech>
         <DivTechImgBox>
           {techImg.map((v) => (
             <TechImg key={v.name} name={v.name} src={v.src} />
@@ -56,12 +65,12 @@ const Tech = () => {
         </DivTechImgBox>
       </DivTechUp>
       <DivTechUp>
-        <H1Tech>Tech Logic</H1Tech>
-        <ImgTechLogic src={TECHLOGIC} alt="TECHLOGIC" />
+        <H1Tech {...animationFadeIn[1]}>Tech Logic</H1Tech>
+        <ImgTechLogic {...animationFadeIn[2]} src={TECHLOGIC} alt="TECHLOGIC" />
       </DivTechUp>
       <DivTech>
-        <H1Tech>ROS Logic</H1Tech>
-        <ImgRosLogic src={ROSLOGIC} alt="ROSLOGIC" />
+        <H1Tech {...animationFadeIn[3]}>ROS Logic</H1Tech>
+        <ImgRosLogic {...animationFadeIn[4]} src={ROSLOGIC} alt="ROSLOGIC" />
       </DivTech>
     </Layout>
   );

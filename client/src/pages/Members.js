@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useScrollFadeIn } from "hooks";
 
 import MemoryIcon from "@material-ui/icons/Memory";
 import LanguageIcon from "@material-ui/icons/Language";
@@ -44,26 +45,32 @@ const useStyles = makeStyles({
 
 const Members = () => {
   const classes = useStyles();
+  const animationFadeIn = {
+    0: useScrollFadeIn(),
+    1: useScrollFadeIn(0.1),
+    2: useScrollFadeIn(),
+    3: useScrollFadeIn(0.1),
+  };
 
   return (
     <Layout title="MEMBER" backImg={BACKIMG}>
       <DivCon>
-        <DivTeamTitle>
+        <DivTeamTitle {...animationFadeIn[0]}>
           <MemoryIcon className={classes.teamIcon} />
           <H1TeamTitle>Embedded</H1TeamTitle>
         </DivTeamTitle>
-        <DivTeam>
+        <DivTeam {...animationFadeIn[1]}>
           {embededTeam.map((v) => (
             <MemberContent key={v.name} img={v.img} name={v.name} desc={v.desc} git={v.git} />
           ))}
         </DivTeam>
       </DivCon>
       <DivCon>
-        <DivTeamTitle>
+        <DivTeamTitle {...animationFadeIn[2]}>
           <LanguageIcon className={classes.teamIcon} />
           <H1TeamTitle>Web</H1TeamTitle>
         </DivTeamTitle>
-        <DivTeam>
+        <DivTeam {...animationFadeIn[3]}>
           {webTeam.map((v) => (
             <MemberContent key={v.name} img={v.img} name={v.name} desc={v.desc} git={v.git} />
           ))}

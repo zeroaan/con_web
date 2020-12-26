@@ -1,9 +1,21 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { useScrollFadeIn } from "hooks";
 
 import ABOUTGIF from "assets/about/aboutGif.gif";
 
 import { aboutIcon, aboutDesc } from "data/About/AboutData";
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+`;
 
 const DivStyled = styled.div`
   display: flex;
@@ -24,6 +36,7 @@ const DivCon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: ${fadeIn} 1s cubic-bezier(0, 0, 0.2, 1);
 `;
 const DivImgBox = styled.div`
   display: flex;
@@ -68,11 +81,18 @@ const ImgAboutGif = styled.img`
 `;
 
 const AboutContent = () => {
+  const animationFadeIn = {
+    0: useScrollFadeIn(),
+    1: useScrollFadeIn(),
+    2: useScrollFadeIn(),
+    3: useScrollFadeIn(),
+  };
+
   return (
     <>
       <DivStyled>
         <DivAbout>
-          {aboutIcon.map((v) => (
+          {aboutIcon.map((v, i) => (
             <DivCon key={v.title}>
               <DivImgBox>
                 <ImgAbout src={v.img} alt={v.title} />
@@ -82,9 +102,11 @@ const AboutContent = () => {
             </DivCon>
           ))}
         </DivAbout>
-        <H1Title>Con ?</H1Title>
+        <H1Title {...animationFadeIn[0]}>Con ?</H1Title>
         {aboutDesc.map((desc, i) => (
-          <PContent key={i}>{desc}</PContent>
+          <PContent key={i} {...animationFadeIn[i + 1]}>
+            {desc}
+          </PContent>
         ))}
         <ImgAboutGif src={ABOUTGIF} alt="ABOUTGIF" />
       </DivStyled>

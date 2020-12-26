@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useScrollFadeIn } from "hooks";
 
 const DivImg = styled.div`
   position: relative;
@@ -12,9 +13,11 @@ const ImgTech = styled.img`
 `;
 
 const TechImg = ({ name, src }) => {
+  const animationFadeIn = useScrollFadeIn(0.4);
+
   return (
     <>
-      <DivImg>
+      <DivImg {...animationFadeIn}>
         <ImgTech src={src} alt={name} />
       </DivImg>
     </>
