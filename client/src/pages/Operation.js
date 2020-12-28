@@ -20,6 +20,10 @@ const DivOperation = styled.div`
   width: 1000px;
   height: 600px;
   background-color: rgb(235, 236, 240);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 const CloseIconButton = styled(CloseIcon)`
   position: absolute;
@@ -28,15 +32,13 @@ const CloseIconButton = styled(CloseIcon)`
   cursor: pointer;
 `;
 const DivRos = styled.div`
-  position: relative;
-  top: 90px;
-  left: 125px;
+  margin-top: 20px;
   user-select: none;
 `;
 const DivPoint = styled.div`
   position: absolute;
-  top: 253px;
-  left: 485px;
+  top: 353px;
+  left: 600px;
   font-size: 20px;
   color: red;
 `;
@@ -48,6 +50,7 @@ const Operation = ({ onClickClose }) => {
   return (
     <DivBlack>
       <DivOperation>
+        <h1>H/W 기능 구현 중 입니다...</h1>
         <CloseIconButton onClick={onClickClose} />
         <DivRos>
           <DivPoint>●</DivPoint>
